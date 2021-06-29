@@ -7,7 +7,8 @@ export const LayoutContainer = styled.div`
 `;
 
 export const HeaderContainer = styled.header`
-  position: absolute;
+  z-index: 100;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -62,7 +63,7 @@ export const FooterContainer = styled.div`
         margin-bottom: 10px;
       }
       span {
-        font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+        font-family: 'Spoqa Han Sans Neo', sans-serif;
         font-size: 14px;
         font-weight: 300;
       }
@@ -75,5 +76,21 @@ export const FooterContainer = styled.div`
         text-align: right;
       }
     }
+  }
+`;
+
+export const ScrollBar = styled.div<{ width: number }>`
+  position: fixed;
+  width: 100vw;
+  z-index: 99;
+  left: 0;
+  bottom: 0;
+  &::after {
+    transition: width 0.4s ease-in-out;
+    content: '';
+    display: block;
+    height: 8px;
+    background-color: ${({ theme }) => theme.primary[1]};
+    width: ${({ width }) => width}%;
   }
 `;

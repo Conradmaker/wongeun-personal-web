@@ -1,6 +1,7 @@
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 import { createGlobalStyle } from 'styled-components';
 import UserThemeProvider from 'hooks/ThemeProvider';
+import GlobalModalStateProvider from 'hooks/ModalStateProvider';
 
 const Global = createGlobalStyle`
   * {
@@ -18,15 +19,21 @@ const Global = createGlobalStyle`
   .inner{
     max-width:1048px;
     margin: 0 auto;
+    position:relative;
+  }
+  .page__section{
+    padding-top:60px;
   }
 `;
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <UserThemeProvider>
-      <Global />
-      <Component {...pageProps} />
-    </UserThemeProvider>
+    <GlobalModalStateProvider>
+      <UserThemeProvider>
+        <Global />
+        <Component {...pageProps} />
+      </UserThemeProvider>
+    </GlobalModalStateProvider>
   );
 }
 
