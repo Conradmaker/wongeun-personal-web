@@ -2,10 +2,18 @@ import styled, { keyframes } from 'styled-components';
 
 const slideLeft = keyframes`
     from{
-        transform:translateX(1200px)
+        transform:translateX(1200px);
     }
     to{
-        transform:translateX(0)
+        transform:translateX(0);
+    }
+`;
+const fadeIn = keyframes`
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
     }
 `;
 export const ModalContainer = styled.div`
@@ -16,6 +24,7 @@ export const ModalContainer = styled.div`
   bottom: 0;
   z-index: 200;
   background-color: ${({ theme }) => theme.layerColor.modalLayer};
+  animation: ${fadeIn} 0.4s ease-in-out;
 `;
 
 const ModalBox = styled.div`

@@ -40,20 +40,16 @@ export default function Profile(): JSX.Element {
             <h3>Education</h3>
             <ul>
               {educationList.map(yearEdu => (
-                <li>
+                <li key={yearEdu.year}>
                   <h4>{yearEdu.year}/</h4>
                   <ul>
                     {yearEdu.task.map(t => (
-                      <>
-                        <li>
-                          <span>{t.name}</span>
-                        </li>
+                      <li key={t.id}>
+                        <span>{t.name}</span>
                         {t.detail.map(d => (
-                          <li>
-                            <small>{d}</small>
-                          </li>
+                          <small key={d}>{d}</small>
                         ))}
-                      </>
+                      </li>
                     ))}
                   </ul>
                 </li>

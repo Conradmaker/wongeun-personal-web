@@ -50,3 +50,17 @@ export const ScrollDownBtnBox = styled.div`
     }
   }
 `;
+
+export const CloseBtnBox = styled.button`
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  color: #fff;
+  position: absolute;
+  font-size: 20px;
+  top: 50%;
+  transform: translateX(50%);
+  left: 50px;
+  border-bottom: 1px solid #fff;
+`;

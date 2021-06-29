@@ -1,6 +1,7 @@
 import React from 'react';
 import { ModalContainer, MoreSkillModalBox } from './styles';
 import skillDetailsData from 'data/skillDetailData';
+import { CloseBtn } from 'components/Button/RoundBtn';
 
 type MoreSkillModalProps = {
   currentMoreInfo: 'front' | 'back' | 'etc';
@@ -19,6 +20,7 @@ export default function MoreSkillModal({
 
   return (
     <ModalContainer onClick={onClickBg}>
+      <CloseBtn onClick={onClose} />
       <MoreSkillModalBox>
         <h3>{data.name}</h3>
         <p>{data.content}</p>

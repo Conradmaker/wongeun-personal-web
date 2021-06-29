@@ -81,7 +81,13 @@ export const ProfileContainer = styled.div`
               font-size: 20px;
             }
             small {
+              color: ${({ theme }) => theme.textColor.lighter};
+              display: block;
+              padding: 5px 0;
               font-size: 14px;
+              &::before {
+                content: '-';
+              }
             }
           }
         }
@@ -93,7 +99,7 @@ export const SkillsContainer = styled.div`
   height: 100vh;
   .inner {
     .skill__list {
-      margin: 40px 0;
+      margin: 50px 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -101,7 +107,7 @@ export const SkillsContainer = styled.div`
         font-size: 32px;
       }
       ul {
-        margin: 20px 00px;
+        margin: 25px 00px;
         display: flex;
         li {
           padding: 0 10px;
@@ -125,7 +131,6 @@ export const SkillsContainer = styled.div`
       }
       small {
         cursor: pointer;
-        padding: 10px 0;
         font-weight: 500;
         color: ${({ theme }) => theme.textColor.lighter};
         &:hover {

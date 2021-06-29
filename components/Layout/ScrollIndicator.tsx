@@ -26,7 +26,6 @@ export default function ScrollIndicator(): JSX.Element {
         document.documentElement.clientHeight || document.body.clientHeight;
       const contentHeight = scrollHeight - clientHeight;
       const percent = (scrollTop / contentHeight) * 100;
-      console.log(scrollTop, scrollHeight, clientHeight);
       setWidth(percent);
     }, 200);
 
