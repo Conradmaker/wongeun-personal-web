@@ -13,7 +13,11 @@ export default function Footer(): JSX.Element {
           <ul>
             <li>TEL . 010 - 8731 - 0337</li>
             <li>Email . yhg0337@gmail.com</li>
-            <li>Github . conradmaker</li>
+            <li>
+              <a href="https://github.com/Conradmaker" target="_blank">
+                visit Github
+              </a>
+            </li>
           </ul>
         </div>
       </div>

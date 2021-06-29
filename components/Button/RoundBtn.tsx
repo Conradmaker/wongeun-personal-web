@@ -1,7 +1,8 @@
 import React from 'react';
-import { RiSunFill, RiMoonClearFill } from 'react-icons/ri';
-import { ToggleThemeBtnBox, CloseBtnBox } from './styles';
+import { RiSunFill, RiMoonClearFill, RiArrowUpSLine } from 'react-icons/ri';
+import { ToggleThemeBtnBox, CloseBtnBox, ScrollTopBtnBox } from './styles';
 import { useThemeState, useToggleTheme } from 'hooks/ThemeProvider';
+import { useCallback } from 'react';
 
 export function ToggleThemeBtn(): JSX.Element {
   const onToggleTheme = useToggleTheme();
@@ -19,4 +20,19 @@ type CloseBtnProps = {
 };
 export function CloseBtn({ onClick }: CloseBtnProps): JSX.Element {
   return <CloseBtnBox onClick={onClick}>CLOSE</CloseBtnBox>;
+}
+
+export function ScrollTopBtn(): JSX.Element {
+  const moveTop = useCallback(() => {
+    if (!window) return;
+    window.scrollTo({ top: 0 });
+  }, []);
+  return (
+    <ScrollTopBtnBox onClick={moveTop}>
+      <i>
+        <RiArrowUpSLine />
+      </i>
+      <p>MOVE TOP</p>
+    </ScrollTopBtnBox>
+  );
 }

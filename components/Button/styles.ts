@@ -64,3 +64,47 @@ export const CloseBtnBox = styled.button`
   left: 50px;
   border-bottom: 1px solid #fff;
 `;
+
+export const ScrollTopBtnBox = styled.div`
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  bottom: 40px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: ${({ theme }) => theme.primary[1]};
+  color: #eee;
+  transition: all 0.4s;
+  z-index: 101;
+  i {
+    width: 40px;
+    height: 40px;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  p {
+    transition: all 0.4s;
+    opacity: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    flex: 1;
+    font-size: 14px;
+  }
+  &:hover {
+    background-color: ${({ theme }) => theme.background.lighter};
+    border: 2px solid ${({ theme }) => theme.primary[1]};
+    width: 130px;
+    color: ${({ theme }) => theme.primary[1]};
+    p {
+      opacity: 1;
+    }
+  }
+`;

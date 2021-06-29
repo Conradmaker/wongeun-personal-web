@@ -12,7 +12,7 @@ export default function PageTitle({
   height = 0,
 }: PageTitleProps): JSX.Element {
   return (
-    <PageTitleBox width={width} height={height}>
+    <PageTitleBox width={width} height={height} className="page__title">
       {children}
     </PageTitleBox>
   );

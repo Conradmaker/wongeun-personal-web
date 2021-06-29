@@ -6,7 +6,7 @@ type SideTitleProps = {
 };
 export default function SideTitle({ value }: SideTitleProps): JSX.Element {
   return (
-    <SideTitleBox>
+    <SideTitleBox className="side__title">
       <div className="line"></div>
       <h2>{value}</h2>
     </SideTitleBox>

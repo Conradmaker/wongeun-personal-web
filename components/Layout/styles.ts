@@ -35,6 +35,30 @@ export const HeaderContainer = styled.header`
         &:hover {
           text-decoration: underline;
         }
+        &.git__link {
+          width: 63px;
+          justify-content: center;
+          display: flex;
+          align-items: center;
+          svg {
+            display: none;
+            font-size: 24px;
+          }
+          &:hover {
+            a {
+              color: ${({ theme }) => theme.primary[1]};
+              text-align: center;
+              width: 100%;
+              height: 100%;
+              svg {
+                display: initial;
+              }
+            }
+            span {
+              display: none;
+            }
+          }
+        }
       }
       & > li:last-of-type {
         margin-right: 0;
@@ -75,6 +99,10 @@ export const FooterContainer = styled.div`
       ul > li {
         padding: 5px 0;
         text-align: right;
+        a {
+          color: #fff;
+          font-weight: bold;
+        }
       }
     }
   }
