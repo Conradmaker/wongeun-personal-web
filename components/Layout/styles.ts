@@ -13,6 +13,8 @@ export const HeaderContainer = styled.header`
   top: 0;
   left: 0;
   right: 0;
+  background-color: inherit;
+  transition: all 0.3s ease-in-out;
   .inner {
     height: 60px;
     display: flex;
@@ -64,6 +66,9 @@ export const HeaderContainer = styled.header`
         margin-right: 0;
       }
     }
+  }
+  &.light {
+    background-color: ${({ theme }) => theme.background.lighter};
   }
 `;
 

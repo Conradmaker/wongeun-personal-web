@@ -7,8 +7,11 @@ import Contact from 'components/Main/Contact';
 import Profile from 'components/Main/Profile';
 import ScrollIndicator from 'components/Layout/ScrollIndicator';
 import { ScrollTopBtn } from 'components/Button/RoundBtn';
+import useChangeHeader from 'hooks/useChangeHeader';
 
 export default function Home(): JSX.Element {
+  useChangeHeader();
+
   return (
     <Layout>
       <ScrollTopBtn />
