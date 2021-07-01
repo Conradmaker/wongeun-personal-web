@@ -36,6 +36,8 @@ export const ProfileContainer = styled.section`
       .contact {
         margin-top: 30px;
         li {
+          letter-spacing: 0.9px;
+          color: ${({ theme }) => theme.textColor.initial};
           padding: 10px 0;
         }
       }
@@ -44,7 +46,7 @@ export const ProfileContainer = styled.section`
       .summary {
         margin-bottom: 40px;
         p {
-          color: ${({ theme }) => theme.primary[1]};
+          color: ${({ theme }) => theme.textColor.primary};
           font-size: 48px;
           font-weight: 700;
         }
@@ -54,13 +56,15 @@ export const ProfileContainer = styled.section`
         }
         span {
           display: block;
-          margin-top: 10px;
+          margin-top: 20px;
           font-size: 20px;
           color: ${({ theme }) => theme.textColor.lighter};
         }
       }
       .education {
         h3 {
+          letter-spacing: 0.9px;
+          color: ${({ theme }) => theme.textColor.initial};
           font-size: 36px;
           margin-bottom: 20px;
         }
@@ -68,6 +72,8 @@ export const ProfileContainer = styled.section`
           font-family: 'Spoqa Han Sans Neo', sans-serif;
           font-weight: 300;
           & > li {
+            letter-spacing: 0.9px;
+            color: ${({ theme }) => theme.textColor.initial};
             display: flex;
             padding: 10px 0;
             text-align: end;
@@ -110,6 +116,7 @@ export const SkillsContainer = styled.section`
       align-items: center;
       h3 {
         font-size: 32px;
+        color: ${({ theme }) => theme.textColor.initial};
       }
       ul {
         margin: 25px 00px;
@@ -125,6 +132,7 @@ export const SkillsContainer = styled.section`
             margin-bottom: 5px;
           }
           span {
+            color: ${({ theme }) => theme.textColor.lighter};
             font-size: 14px;
           }
         }
@@ -135,11 +143,15 @@ export const SkillsContainer = styled.section`
         font-weight: 300;
       }
       small {
+        transition: all 0.3s;
+        padding: 3px 5px;
+        border-bottom: 1px solid ${({ theme }) => theme.textColor.lighter};
         cursor: pointer;
         font-weight: 500;
         color: ${({ theme }) => theme.textColor.lighter};
         &:hover {
-          text-decoration: underline;
+          padding: 3px 20px;
+          border-bottom: 1px solid ${({ theme }) => theme.textColor.initial};
           color: ${({ theme }) => theme.textColor.initial};
         }
       }
@@ -163,6 +175,8 @@ export const MoreContainer = styled.section`
     letter-spacing: 0.8px;
     line-height: 1.3;
     h3 {
+      color: ${({ theme }) => theme.textColor.initial};
+      font-weight: 500;
       margin-bottom: 10px;
       font-size: 32px;
       text-align: center;
@@ -170,6 +184,7 @@ export const MoreContainer = styled.section`
     .why-me {
       margin-bottom: 50px;
       ul {
+        color: ${({ theme }) => theme.textColor.lighter};
         font-family: 'Spoqa Han Sans Neo', sans-serif;
         margin: 0 auto;
         max-width: 80%;
@@ -183,17 +198,27 @@ export const MoreContainer = styled.section`
       }
     }
     .portfolio {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       p {
+        color: ${({ theme }) => theme.textColor.lighter};
         text-align: center;
         font-family: 'Spoqa Han Sans Neo', sans-serif;
         font-weight: 300;
       }
       p:last-of-type {
         margin-top: 20px;
+        display: inline-block;
+        border-bottom: 1px solid ${({ theme }) => theme.textColor.initial};
+        padding: 2px 5px;
         cursor: pointer;
-        text-decoration: underline;
         font-size: 18px;
-        color: ${({ theme }) => theme.textColor.lighter};
+        color: ${({ theme }) => theme.textColor.initial};
+        transition: all 0.3s;
+        &:hover {
+          padding: 2px 20px;
+        }
       }
     }
   }
@@ -236,7 +261,7 @@ export const ContactContainer = styled.section`
       border: 2px solid ${({ theme }) => theme.background.lighter};
       transition: all 0.2s ease-in-out;
       &:focus {
-        border: 2px solid ${({ theme }) => theme.primary[1]};
+        border: 2px solid ${({ theme }) => theme.textColor.primary};
       }
     }
     button {
@@ -248,7 +273,7 @@ export const ContactContainer = styled.section`
       justify-content: center;
       outline: none;
       border: none;
-      background-color: ${({ theme }) => theme.primary[1]};
+      background-color: ${({ theme }) => theme.textColor.primary};
       color: ${({ theme }) => theme.background.lighter};
       cursor: pointer;
       border-radius: 3px;
@@ -258,13 +283,14 @@ export const ContactContainer = styled.section`
       }
       &:hover {
         background-color: ${({ theme }) => theme.background.lighter};
-        color: ${({ theme }) => theme.primary[1]};
-        border: 1px solid ${({ theme }) => theme.primary[1]};
+        color: ${({ theme }) => theme.textColor.primary};
+        border: 2px solid ${({ theme }) => theme.textColor.primary};
+
         span {
           opacity: 0;
         }
         svg {
-          transform: translateX(20px);
+          transform: translateX(20px) scale(1.3);
         }
       }
     }

@@ -14,48 +14,6 @@ export const WorkTitleSection = styled.section`
         text-align: center;
       }
     }
-    .thumnail__list {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      margin: 0 auto;
-      height: 200px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      li {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        cursor: pointer;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-        a {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #eee;
-          font-size: 20px;
-          text-decoration: none;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          content: '';
-          opacity: 0;
-          background-color: ${({ theme }) => theme.layerColor.imageLayer};
-        }
-        &:hover {
-          a {
-            content: '';
-            opacity: 1;
-          }
-        }
-      }
-    }
   }
 `;
 
@@ -84,6 +42,7 @@ export const PrimaryWorkContainer = styled.section`
         flex-direction: column;
         justify-content: center;
         h3 {
+          color: ${({ theme }) => theme.textColor.lighter};
           font-size: 14px;
           margin: 15px 0 2px 0;
         }
@@ -110,19 +69,23 @@ export const PrimaryWorkContainer = styled.section`
           strong {
             padding: 3px 0;
             display: block;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 500;
+            color: ${({ theme }) => theme.textColor.initial};
           }
           small {
+            color: ${({ theme }) => theme.textColor.initial};
             display: block;
             text-indent: 3px;
             font-weight: 300;
+            line-height: 1.3;
+            font-size: 15px;
           }
           ul {
             display: flex;
             margin-top: 10px;
             li {
-              border-bottom: 1px solid ${({ theme }) => theme.primary[1]};
+              border-bottom: 1px solid ${({ theme }) => theme.textColor.primary};
               margin: 0 20px;
               cursor: pointer;
               display: flex;
@@ -133,7 +96,7 @@ export const PrimaryWorkContainer = styled.section`
               width: 70px;
               height: 40px;
               & > * {
-                color: ${({ theme }) => theme.primary[1]};
+                color: ${({ theme }) => theme.textColor.primary};
                 font-size: 14px;
                 transition: all 0.3s;
               }
@@ -192,14 +155,15 @@ export const ProjectItemBox = styled.li`
   height: 220px;
   background-color: #aaa;
   position: relative;
-  overflow: hidden;
-  border-radius: 3px;
+  border-radius: 10px;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
   }
   .item__layer {
+    border-radius: 10px;
     cursor: pointer;
     color: #fff;
     position: absolute;
@@ -207,7 +171,13 @@ export const ProjectItemBox = styled.li`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: ${({ theme }) => theme.layerColor.imageLayer};
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.6) 20%,
+      rgba(0, 0, 0, 0.1) 40%,
+      rgba(0, 0, 0, 0) 100%
+    );
     .summary,
     .btn__group {
       position: absolute;
@@ -224,20 +194,25 @@ export const ProjectItemBox = styled.li`
       }
     }
     .stack {
-      display: flex;
+      border-radius: 15px;
+      padding: 0 3px;
       position: absolute;
-      top: 5px;
       right: 5px;
+      top: -20px;
+      height: 35px;
+      background: #fff;
+      display: flex;
+      align-items: center;
       li > svg {
         margin: 5px;
-        width: 20px;
-        height: 20px;
+        width: 19px;
+        height: 19px;
       }
     }
     .summary {
       justify-content: flex-end;
       align-items: flex-start;
-      text-shadow: 0 0 10px #222;
+      text-shadow: 0 0 10px #000;
       h4 {
         font-size: 20px;
         margin-bottom: 10px;
@@ -255,7 +230,7 @@ export const ProjectItemBox = styled.li`
     &:hover {
       .summary {
         opacity: 0;
-        transform: translateY(30%);
+        transform: translateY(20%);
       }
       .btn__group {
         opacity: 1;
@@ -266,9 +241,9 @@ export const ProjectItemBox = styled.li`
         li {
           position: relative;
           border-radius: 3px;
-          background-color: ${({ theme }) => theme.background.lighter};
-          border: 1px solid ${({ theme }) => theme.primary[1]};
-          color: ${({ theme }) => theme.primary[1]};
+          background-color: ${({ theme }) => theme.background.initial};
+          border: 1px solid ${({ theme }) => theme.textColor.primary};
+          color: ${({ theme }) => theme.textColor.primary};
           display: flex;
           align-items: center;
           justify-content: center;

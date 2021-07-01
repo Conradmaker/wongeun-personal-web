@@ -15,9 +15,8 @@ export const PageTitleBox = styled.article<{ width?: number; height?: number }>`
     font-size: 96px;
     font-weight: 800;
     em {
-      -webkit-text-stroke: 1px ${({ theme }) => theme.primary[1]};
+      -webkit-text-stroke: 1.5px ${({ theme }) => theme.textColor.primary};
       color: rgba(0, 0, 0, 0);
-      /* text-shadow: 0 0 1px 0 ${({ theme }) => theme.primary[1]}; */
     }
   }
   & > h2 {
@@ -44,9 +43,10 @@ export const SideTitleBox = styled.div`
   top: 230px;
   left: -20px;
   transform: rotate(-90deg);
+  color: ${({ theme }) => theme.textColor.initial};
   h2 {
     text-indent: 30px;
-    border-left: 4px solid ${({ theme }) => theme.primary[1]};
+    border-left: 4px solid ${({ theme }) => theme.textColor.primary};
     font-size: 36px;
     display: flex;
   }

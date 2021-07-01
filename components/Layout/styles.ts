@@ -14,24 +14,25 @@ export const HeaderContainer = styled.header`
   left: 0;
   right: 0;
   background-color: inherit;
-  transition: all 0.3s ease-in-out;
+  transition: 0.3s;
   .inner {
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: ${({ theme }) => theme.primary[1]};
     .logo {
       letter-spacing: 0.5px;
       font-size: 24px;
       font-weight: 600;
       cursor: pointer;
+      color: ${({ theme }) => theme.textColor.primary};
     }
     & > ul {
       display: flex;
       font-size: 16px;
       align-items: center;
       & > li {
+        color: ${({ theme }) => theme.textColor.primary};
         cursor: pointer;
         margin-right: 20px;
         &:hover {
@@ -80,27 +81,35 @@ export const FooterContainer = styled.div`
   background-color: ${({ theme }) => theme.primary[1]};
   .inner {
     height: 120px;
-    color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     .footer__left {
       .logo {
+        color: #fff;
         letter-spacing: 0.5px;
         font-size: 24px;
         font-weight: 600;
         cursor: pointer;
         margin-bottom: 10px;
       }
-      span {
+      span,
+      p {
+        color: #eee;
         font-family: 'Spoqa Han Sans Neo', sans-serif;
         font-size: 14px;
         font-weight: 300;
+      }
+      p {
+        margin-top: 10px;
       }
     }
     .footer__right {
       font-size: 14px;
       font-weight: 300;
+      * {
+        color: #eee;
+      }
       ul > li {
         padding: 5px 0;
         text-align: right;
@@ -126,5 +135,15 @@ export const ScrollBar = styled.div<{ width: number }>`
     height: 8px;
     background-color: ${({ theme }) => theme.primary[1]};
     width: ${({ width }) => width}%;
+    transition: all 0.3s;
+  }
+  &:hover&::after {
+    height: 30px;
+    padding: 5px 20px;
+    font-size: 20px;
+    text-align: end;
+    white-space: nowrap;
+    color: #fff;
+    content: '${({ width }) => Math.floor(width)} %';
   }
 `;

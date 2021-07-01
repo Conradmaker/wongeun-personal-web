@@ -40,12 +40,13 @@ const ModalBox = styled.div`
 `;
 
 export const MoreSkillModalBox = styled(ModalBox)`
-  width: 1200px;
+  width: 1000px;
 `;
 
 export const IframeModalBox = styled(ModalBox)`
-  width: 1200px;
+  width: 1000px;
   iframe {
+    background-color: #fff;
     width: 100%;
     height: 100%;
   }

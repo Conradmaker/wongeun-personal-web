@@ -1,6 +1,7 @@
 import React from 'react';
 import { WorkTitleSection } from './styles';
 import PageTitle from 'components/Typography/PageTitle';
+import ScrollDown from 'components/Button/ScrollDown';
 
 function ThumbnailItem(): JSX.Element {
   return (
@@ -29,12 +30,7 @@ export default function WorkTitle(): JSX.Element {
             Hello! I am the developer <br /> Wongeun Yoo.
           </h2>
         </PageTitle>
-        {/* <ul className="thumnail__list">
-          <ThumbnailItem />
-          <ThumbnailItem />
-          <ThumbnailItem />
-          <ThumbnailItem />
-        </ul> */}
+        <ScrollDown />
       </div>
     </WorkTitleSection>
   );

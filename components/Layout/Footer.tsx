@@ -8,6 +8,7 @@ export default function Footer(): JSX.Element {
         <div className="footer__left">
           <div className="logo">Conrad.maker</div>
           <span>개발과 배움을 즐거워하는 개발자 유원근입니다.</span>
+          <p>&copy; 2021. 유원근 All rights reserved.</p>
         </div>
         <div className="footer__right">
           <ul>

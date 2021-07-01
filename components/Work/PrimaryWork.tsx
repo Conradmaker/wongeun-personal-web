@@ -49,7 +49,10 @@ export default function PrimaryWork({
             </li>
             <li>
               <strong>역할</strong>
-              <small>역할이 없다..</small>
+              <small>
+                역할이 없다..역할이 없다..역할이 없다..역할이 없다..역할이 없다..역할이
+                없다..역할이 없다..역할이 없다..역할이 없다..역할이 없다..
+              </small>
             </li>
             <li>
               <strong>특징</strong>

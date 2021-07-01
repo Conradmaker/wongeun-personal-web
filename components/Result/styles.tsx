@@ -20,9 +20,11 @@ export const IncompleteContainer = styled.div`
     text-align: center;
     font-size: 18px;
     margin: 30px 0;
+    color: ${({ theme }) => theme.textColor.lighter};
   }
   .btn__group {
     display: flex;
+    color: ${({ theme }) => theme.textColor.initial};
     span {
       font-weight: bold;
       cursor: pointer;

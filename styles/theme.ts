@@ -18,6 +18,7 @@ export type colorTheme = {
     lighter: string;
     darker: string;
     warm: string;
+    primary: string;
   };
   layerColor: {
     imageLayer: string;
@@ -60,10 +61,11 @@ const theme: ThemeType = {
       darker: '',
     },
     textColor: {
-      initial: '#fff',
-      lighter: '#E1DFDC',
+      initial: '#eee',
+      lighter: '#bbb',
       darker: '#2B2B2B',
-      warm: '#561D1D',
+      warm: '#eee',
+      primary: '#5889E8',
     },
     layerColor: {
       imageLayer: 'rgba(0,0,0,.3)',
@@ -88,6 +90,7 @@ const theme: ThemeType = {
       lighter: '#AAAAAA',
       darker: '#FCFCFC',
       warm: '#561D1D',
+      primary: '#39549A',
     },
     layerColor: {
       imageLayer: 'rgba(0,0,0,.3)',

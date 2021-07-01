@@ -38,14 +38,16 @@ export const ScrollDownBtnBox = styled.div`
   width: 150px;
   text-align: center;
   font-size: 28px;
+  color: ${({ theme }) => theme.textColor.initial};
   p {
     font-size: 18px;
   }
   svg {
+    font-size: 35px;
     animation: upDown 0.7s ease-in-out alternate infinite;
     @keyframes upDown {
       from {
-        transform: translateY(5px);
+        transform: translateY(8px);
       }
     }
   }
@@ -60,12 +62,12 @@ export const CloseBtnBox = styled.button`
   position: absolute;
   font-size: 20px;
   top: 50%;
+  right: 1100px;
   transform: translateX(50%);
-  left: 50px;
   border-bottom: 1px solid #fff;
 `;
 
-export const ScrollTopBtnBox = styled.div`
+export const ScrollTopBtnBox = styled.div<{ visible: boolean }>`
   position: fixed;
   display: flex;
   align-items: center;
@@ -77,10 +79,11 @@ export const ScrollTopBtnBox = styled.div`
   height: 40px;
   border-radius: 20px;
   overflow: hidden;
-  background-color: ${({ theme }) => theme.primary[1]};
+  background-color: ${({ theme }) => theme.textColor.primary};
   color: #eee;
   transition: all 0.4s;
   z-index: 101;
+  opacity: 0;
   i {
     width: 40px;
     height: 40px;
@@ -89,7 +92,6 @@ export const ScrollTopBtnBox = styled.div`
     align-items: center;
     justify-content: center;
   }
-
   p {
     transition: all 0.4s;
     opacity: 0;
@@ -100,11 +102,16 @@ export const ScrollTopBtnBox = styled.div`
   }
   &:hover {
     background-color: ${({ theme }) => theme.background.lighter};
-    border: 2px solid ${({ theme }) => theme.primary[1]};
+    border: 2px solid ${({ theme }) => theme.textColor.primary};
     width: 130px;
-    color: ${({ theme }) => theme.primary[1]};
+    color: ${({ theme }) => theme.textColor.primary};
     p {
       opacity: 1;
     }
   }
+  ${({ visible }) =>
+    visible &&
+    css`
+      opacity: 1;
+    `}
 `;
