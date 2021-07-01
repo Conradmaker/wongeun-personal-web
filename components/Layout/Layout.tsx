@@ -12,8 +12,8 @@ const Global = createGlobalStyle<{ globalModalOpen: boolean }>`
     globalModalOpen &&
     css`
       html {
-        overflow: hidden;
-        padding-right: 15px;
+        overflow: hidden !important;
+        padding-right: 0px !important;
       }
     `}
 `;

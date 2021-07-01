@@ -91,7 +91,7 @@ const theme: ThemeType = {
     },
     layerColor: {
       imageLayer: 'rgba(0,0,0,.3)',
-      modalLayer: 'rgba(115,115,115,.4)',
+      modalLayer: 'rgba(30,30,30,.7)',
     },
     grayScale: {
       1: '#484848',
