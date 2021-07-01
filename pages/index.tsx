@@ -17,7 +17,7 @@ export default function Home(): JSX.Element {
       <ScrollTopBtn />
       <ScrollIndicator />
       <Head>
-        <title>ABOUT ME</title>
+        <title>유원근 | 소개</title>
       </Head>
       <MainTitle />
       <Profile />

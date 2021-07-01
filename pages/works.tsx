@@ -10,6 +10,7 @@ import styled from 'styled-components';
 import IframeModal from 'components/Modal/IframeModal';
 import { useToggleModalContext } from 'hooks/ModalStateProvider';
 import projectData from 'data/worksData';
+import Head from 'next/head';
 
 const WorkContainer = styled.div`
   section:nth-of-type(3) {
@@ -53,6 +54,9 @@ export default function Work(): JSX.Element {
 
   return (
     <Layout>
+      <Head>
+        <title>유원근 | 포트폴리오</title>
+      </Head>
       <WorkContainer>
         <ScrollTopBtn />
         <ScrollIndicator />

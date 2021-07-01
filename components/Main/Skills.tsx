@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
-import MoreSkillModal from 'components/Modal/MoreSkillModal';
 import SideTitle from 'components/Typography/SideTitle';
 import Icon, { IconName } from 'components/Icon/Icon';
 import { SkillsContainer } from './styles';
 import { useToggleModalContext } from 'hooks/ModalStateProvider';
 import skillList from 'data/skillListData';
+import IframeModal from 'components/Modal/IframeModal';
 
 export default function Skills(): JSX.Element {
   const toggleGlobalModal = useToggleModalContext();
-  const [currentMoreInfo, setCurrentMoreInfo] = useState<'front' | 'back' | 'etc'>(
-    'front'
-  );
+  const [currentMoreInfo, setCurrentMoreInfo] = useState<string>('');
 
   const [detailModalOpen, setDetailModalOpen] = useState(false);
-  const onOpenModal = (type: 'front' | 'back' | 'etc') => {
+  const onOpenModal = (type: string) => {
     toggleGlobalModal();
     setCurrentMoreInfo(type);
     setDetailModalOpen(true);
@@ -38,15 +36,11 @@ export default function Skills(): JSX.Element {
                 </li>
               ))}
             </ul>
-            <small onClick={() => onOpenModal(key as 'front' | 'back' | 'etc')}>
-              MORE
-            </small>
+            <small onClick={() => onOpenModal(value.document)}>MORE</small>
           </div>
         ))}
       </div>
-      {detailModalOpen && (
-        <MoreSkillModal onClose={onCloseModal} currentMoreInfo={currentMoreInfo} />
-      )}
+      {detailModalOpen && <IframeModal onClose={onCloseModal} src={currentMoreInfo} />}
     </SkillsContainer>
   );
 }

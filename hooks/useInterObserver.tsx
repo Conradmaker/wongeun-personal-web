@@ -12,7 +12,6 @@ export default function useInterObserver(
         const header = (document.querySelector('header') as HTMLElement).classList;
         const { target } = entries.find(en => en.isIntersecting) || {};
         const index = contentRef.current.indexOf(target as HTMLElement);
-        console.log(index);
         if (index % 2 === 0) header.add('on');
         else header.remove('on');
       },

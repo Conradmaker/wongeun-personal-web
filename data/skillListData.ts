@@ -13,6 +13,7 @@ const skillList = {
       { name: 'Vue.js', icon: 'vueJs' },
       { name: 'Vuex', icon: 'vuex' },
     ],
+    document: 'https://www.craft.do/s/rhXzYNPj66sCDk',
   },
   back: {
     id: 'back',
@@ -32,6 +33,7 @@ const skillList = {
       { name: 'Nestjs', icon: 'nestJs' },
       { name: 'Sequelize', icon: 'sequelize' },
     ],
+    document: 'https://www.craft.do/s/AKAcUtYkczFldg',
   },
   etc: {
     id: 'etc',
@@ -46,6 +48,7 @@ const skillList = {
       { name: 'Android', icon: 'android' },
       { name: 'C#', icon: 'cSharp' },
     ],
+    document: 'https://www.craft.do/s/WEziWM6pe7qJKi',
   },
 };
 
