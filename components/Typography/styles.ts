@@ -34,6 +34,22 @@ export const PageTitleBox = styled.article<{ width?: number; height?: number }>`
     css`
       height: ${height}px;
     `}
+
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    width: 100%;
+    max-height: 300px;
+    & > p {
+      font-size: 20px;
+    }
+    & > h1 {
+      font-size: 60px;
+    }
+    & > h2 {
+      text-align: end;
+      color: ${({ theme }) => theme.textColor.lighter};
+      font-size: 24px;
+    }
+  }
 `;
 
 export const SideTitleBox = styled.div`
@@ -49,5 +65,17 @@ export const SideTitleBox = styled.div`
     border-left: 4px solid ${({ theme }) => theme.textColor.primary};
     font-size: 36px;
     display: flex;
+  }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    width: auto;
+    align-self: flex-start;
+    position: static;
+    top: auto;
+    left: auto;
+    transform: rotate(0deg);
+    h2 {
+      text-indent: 10px;
+      font-size: 28px;
+    }
   }
 `;

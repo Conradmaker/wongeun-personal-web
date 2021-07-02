@@ -7,9 +7,9 @@ import PageTitle from 'components/Typography/PageTitle';
 import useInput from 'hooks/useInput';
 
 export default function Contact(): JSX.Element {
-  const [name, onChangeName] = useInput('');
-  const [email, onChangeEmail] = useInput('');
-  const [message, onChangeMessage] = useInput('');
+  const [name, onChangeName, setName] = useInput('');
+  const [email, onChangeEmail, setEmail] = useInput('');
+  const [message, onChangeMessage, setMessage] = useInput('');
   const [emailSending, setEmailSending] = useState('');
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -29,6 +29,9 @@ export default function Contact(): JSX.Element {
       });
       if (data) {
         setEmailSending('감사합니다!');
+        setEmail('');
+        setName('');
+        setMessage('');
         setTimeout(() => {
           setEmailSending('');
         }, 1400);

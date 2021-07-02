@@ -5,6 +5,7 @@ import { useThemeState, useToggleTheme } from 'hooks/ThemeProvider';
 import { useCallback } from 'react';
 import { useEffect } from 'react';
 import throttle from 'utils/throttle';
+import { useModalOpenContext } from 'hooks/ModalStateProvider';
 
 export function ToggleThemeBtn(): JSX.Element {
   const onToggleTheme = useToggleTheme();
@@ -26,6 +27,7 @@ export function CloseBtn({ onClick }: CloseBtnProps): JSX.Element {
 
 export function ScrollTopBtn(): JSX.Element {
   const [visible, setVisible] = useState(false);
+  const globalModalOpen = useModalOpenContext();
 
   const moveTop = useCallback(() => {
     if (!window) return;
@@ -47,6 +49,7 @@ export function ScrollTopBtn(): JSX.Element {
     };
   }, []);
 
+  if (globalModalOpen) return <></>;
   return (
     <ScrollTopBtnBox visible={visible} onClick={moveTop}>
       <i>

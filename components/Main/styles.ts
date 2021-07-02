@@ -11,6 +11,17 @@ export const MainTitleContainer = styled.section`
       flex: 1;
     }
   }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    .inner {
+      flex-direction: column-reverse;
+      align-items: center;
+      padding-left: 20px;
+      padding-right: 20px;
+      article {
+        margin-bottom: 50px;
+      }
+    }
+  }
 `;
 
 export const ProfileContainer = styled.section`
@@ -104,6 +115,67 @@ export const ProfileContainer = styled.section`
       }
     }
   }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    .inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 20px;
+      padding-right: 20px;
+      .side__title {
+      }
+      article {
+        margin-top: 30px;
+        width: 100%;
+        padding: 0;
+        flex: 0;
+      }
+      .profile__left {
+        padding: 0;
+        display: flex;
+        img {
+          width: 125px;
+        }
+        .contact {
+          flex: 1;
+          margin-left: 25px;
+          margin-top: auto;
+          li {
+            font-size: 14px;
+          }
+        }
+      }
+      .profile__right {
+        .summary {
+          p {
+            font-size: 32px;
+          }
+          span {
+            margin-top: 10px;
+            font-size: 16px;
+          }
+        }
+        .education {
+          h3 {
+            font-size: 24px;
+          }
+          & > ul {
+            & > li {
+              h4 {
+                font-size: 16px;
+              }
+              span {
+                font-size: 16px;
+              }
+              small {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 `;
 
 export const SkillsContainer = styled.section`
@@ -153,6 +225,36 @@ export const SkillsContainer = styled.section`
           padding: 3px 20px;
           border-bottom: 1px solid ${({ theme }) => theme.textColor.initial};
           color: ${({ theme }) => theme.textColor.initial};
+        }
+      }
+    }
+  }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    .inner {
+      padding-left: 20px;
+      padding-right: 20px;
+      .skill__list {
+        margin: 40px 0;
+        h3 {
+          font-size: 24px;
+        }
+        ul {
+          margin: 10px 00px;
+          flex-wrap: wrap;
+          justify-content: center;
+          li {
+            padding: 7px 10px;
+            justify-content: center;
+            svg {
+              width: 20px;
+              height: 20px;
+              margin-bottom: 3px;
+            }
+            span {
+              color: ${({ theme }) => theme.textColor.lighter};
+              font-size: 11px;
+            }
+          }
         }
       }
     }
@@ -218,6 +320,27 @@ export const MoreContainer = styled.section`
         transition: all 0.3s;
         &:hover {
           padding: 2px 20px;
+        }
+      }
+    }
+  }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    .inner {
+      padding: 60px 20px;
+      h3 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+        font-weight: 400;
+        font-size: 24px;
+        text-align: center;
+      }
+      .why-me {
+        margin: 0;
+        ul {
+          max-width: 100%;
+          li {
+            line-height: 1.4;
+          }
         }
       }
     }
@@ -292,6 +415,18 @@ export const ContactContainer = styled.section`
         svg {
           transform: translateX(20px) scale(1.3);
         }
+      }
+    }
+  }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    min-height: 100vh;
+    height: auto;
+    padding-bottom: 200px;
+    .inner {
+      padding: 60px 20px;
+      flex-direction: column;
+      .page__title {
+        padding: 30px 0;
       }
     }
   }
