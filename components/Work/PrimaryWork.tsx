@@ -83,7 +83,7 @@ export default function PrimaryWork({
             </li>
           </ul>
           <div className="img__wrapper">
-            <img src="/developic.gif" alt="" />
+            <img src={projectData.gif} alt="project_gif" />
           </div>
         </div>
       </div>

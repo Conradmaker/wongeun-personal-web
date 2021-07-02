@@ -8,8 +8,10 @@ import Profile from 'components/Main/Profile';
 import ScrollIndicator from 'components/Layout/ScrollIndicator';
 import { ScrollTopBtn } from 'components/Button/RoundBtn';
 import useChangeHeader from 'hooks/useChangeHeader';
+import useGsap from 'hooks/useGsap';
 
 export default function Home(): JSX.Element {
+  const animationRef = useGsap({ duration: 1, options: { opacity: 1 } });
   useChangeHeader();
 
   return (
@@ -19,11 +21,13 @@ export default function Home(): JSX.Element {
       <Head>
         <title>유원근 | 소개</title>
       </Head>
-      <MainTitle />
-      <Profile />
-      <Skills />
-      <More />
-      <Contact />
+      <div className="invisible" ref={animationRef}>
+        <MainTitle />
+        <Profile />
+        <Skills />
+        <More />
+        <Contact />
+      </div>
     </Layout>
   );
 }

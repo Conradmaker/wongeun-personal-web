@@ -53,8 +53,6 @@ export default function Contact(): JSX.Element {
           <h2>
             개선사항이나 궁금한점이 있으시다면
             <br /> 연락 부탁 드립니다
-            <br />
-            TEL. 010-8731-0337
           </h2>
         </PageTitle>
         <form onSubmit={onSubmit} className="email__form">

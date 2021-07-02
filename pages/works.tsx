@@ -11,6 +11,7 @@ import IframeModal from 'components/Modal/IframeModal';
 import { useToggleModalContext } from 'hooks/ModalStateProvider';
 import projectData from 'data/worksData';
 import Head from 'next/head';
+import useGsap from 'hooks/useGsap';
 
 const WorkContainer = styled.div`
   section:nth-of-type(3) {
@@ -57,6 +58,7 @@ export default function Work(): JSX.Element {
   const [docModalOpen, setDocModalOpen] = useState(false);
   const [currentDoc, setCurrentDoc] = useState('');
   const toggleGlobalModal = useToggleModalContext();
+  const animationRef = useGsap({ duration: 1, options: { opacity: 1 } });
   useChangeHeader();
 
   const onOpenDocModal = (link: string) => {
@@ -75,7 +77,7 @@ export default function Work(): JSX.Element {
       <Head>
         <title>유원근 | 포트폴리오</title>
       </Head>
-      <WorkContainer>
+      <WorkContainer className="invisible" ref={animationRef}>
         <ScrollTopBtn />
         <ScrollIndicator />
         <WorkTitle />

@@ -27,7 +27,9 @@ const Global = createGlobalStyle`
   .no-click {
     pointer-events: none;
   }
-
+  .invisible{
+    opacity: 0;
+  }
 `;
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {

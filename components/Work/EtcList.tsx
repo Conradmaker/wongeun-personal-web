@@ -14,7 +14,7 @@ type ProjectItemProps = {
 function ProjectItem({ projectData, openDoc }: ProjectItemProps): JSX.Element {
   return (
     <ProjectItemBox>
-      <img src="/starbucks.png" alt="" />
+      <img src={projectData.thumbnail} alt="thumbnail" />
       <div className="item__layer">
         <ul className="stack">
           {[...projectData.stack.front, ...projectData.stack.back].map(skill => (

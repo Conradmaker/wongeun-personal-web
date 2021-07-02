@@ -8,6 +8,10 @@ import theme from 'styles/theme';
 import { useModalOpenContext } from 'hooks/ModalStateProvider';
 
 const Global = createGlobalStyle<{ globalModalOpen: boolean }>`
+  html{
+      overflow-y: scroll !important;
+      background: ${({ theme }) => theme.background.initial};
+  }
   ${({ globalModalOpen }) =>
     globalModalOpen &&
     css`

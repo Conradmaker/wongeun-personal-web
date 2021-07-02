@@ -9,7 +9,7 @@ export default function Profile(): JSX.Element {
       <div className="inner page__section">
         <SideTitle value="PROFILE" />
         <article className="profile__left">
-          <img src="/profile.jpg" alt="profile" />
+          <img src={process.env.NEXT_PUBLIC_MY_PHOTO} alt="profile" />
           <ul className="contact">
             <li>Tel. 010-8731-0337</li>
             <li>Email. yhg0337@gmail.com</li>

@@ -13,17 +13,7 @@ export default function useGsap({
   const elRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const Observer = new IntersectionObserver(
-      ([{ isIntersecting }]) => {
-        isIntersecting && gsap.to(elRef.current, duration, options);
-      },
-      { root: null, threshold: 0.3 }
-    );
-    Observer.observe(elRef.current as Element);
-
-    return () => {
-      Observer.unobserve(elRef.current as Element);
-    };
+    gsap.to(elRef.current, duration, options);
   }, []);
 
   return elRef;

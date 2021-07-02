@@ -17,7 +17,7 @@ export default function Incomplete(): JSX.Element {
   return (
     <IncompleteContainer>
       <div className="inner">
-        <img src="/404.gif" alt="loading" />
+        <img src="/gif/404.gif" alt="loading" />
         <p>
           준비중인 페이지입니다.
           <br />
