@@ -15,6 +15,11 @@ export const WorkTitleSection = styled.section`
       }
     }
   }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    .inner.page__section {
+      padding: 60px 20px;
+    }
+  }
 `;
 
 export const PrimaryWorkContainer = styled.section`
@@ -126,6 +131,51 @@ export const PrimaryWorkContainer = styled.section`
       }
     }
   }
+
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    .inner.page__section {
+      padding: 20px 20px;
+      .content__header {
+        margin: 30px 0;
+        flex-direction: column;
+
+        .page__title {
+          h1 {
+            font-size: 44px;
+          }
+          span {
+            font-size: 18px;
+          }
+        }
+        .stack {
+          h3 {
+            margin: 15px 0 5px 0;
+          }
+          ul > li > svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+      .content__body {
+        height: auto;
+        flex-direction: column;
+        & > ul {
+          order: 1;
+        }
+        & > ul > li {
+          ul {
+            margin-top: 0px;
+            justify-content: center;
+          }
+        }
+        .img__wrapper {
+          margin: 0 0 20px 0;
+          order: 0;
+        }
+      }
+    }
+  }
 `;
 
 export const EtcListContainer = styled.section`
@@ -146,6 +196,26 @@ export const EtcListContainer = styled.section`
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 50px 30px;
+    }
+  }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    .inner {
+      padding: 30px 20px;
+      .page__title {
+        h1 {
+          font-size: 44px;
+          margin-bottom: 5px;
+        }
+        h2 {
+          font-size: 18px;
+          text-align: start;
+        }
+      }
+      .project__list {
+        margin-top: 50px;
+        padding-bottom: 200px;
+        grid-template-columns: repeat(1, 1fr);
+      }
     }
   }
 `;
@@ -194,6 +264,7 @@ export const ProjectItemBox = styled.li`
       }
     }
     .stack {
+      box-shadow: 0px 1px 3px #ddd;
       border-radius: 15px;
       padding: 0 3px;
       position: absolute;
@@ -225,7 +296,25 @@ export const ProjectItemBox = styled.li`
       opacity: 0;
       justify-content: center;
       align-items: center;
-      transform: translateX(30%);
+      li {
+        transform: translateX(100px) scale(0);
+        position: relative;
+        border-radius: 3px;
+        background-color: ${({ theme }) => theme.background.initial};
+        border: 1px solid ${({ theme }) => theme.textColor.primary};
+        color: ${({ theme }) => theme.textColor.primary};
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: all 0.4s;
+        width: 125px;
+        height: 30px;
+        &,
+        & > * {
+          transition: all 0.3s;
+        }
+      }
     }
     &:hover {
       .summary {
@@ -234,25 +323,14 @@ export const ProjectItemBox = styled.li`
       }
       .btn__group {
         opacity: 1;
-        transform: translateX(0);
+
         li + li {
           margin-top: 10px;
         }
         li {
-          position: relative;
-          border-radius: 3px;
-          background-color: ${({ theme }) => theme.background.initial};
-          border: 1px solid ${({ theme }) => theme.textColor.primary};
-          color: ${({ theme }) => theme.textColor.primary};
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          transform: translateX(0) scale(1);
           width: 125px;
           height: 30px;
-          &,
-          & > * {
-            transition: all 0.3s;
-          }
           span {
             opacity: 1;
             font-size: 14px;
@@ -270,6 +348,19 @@ export const ProjectItemBox = styled.li`
             }
           }
         }
+      }
+    }
+  }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    height: 250px;
+    border-radius: 5px;
+    img {
+      border-radius: 5px;
+    }
+    .item__layer {
+      border-radius: 5px;
+      .stack > li > svg {
+        margin: 5px 6px;
       }
     }
   }

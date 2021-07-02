@@ -24,6 +24,10 @@ const Global = createGlobalStyle`
   .page__section{
     padding-top:60px;
   }
+  .no-click {
+    pointer-events: none;
+  }
+
 `;
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {

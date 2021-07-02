@@ -33,6 +33,24 @@ const WorkContainer = styled.div`
       }
     }
   }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    section:nth-of-type(3) {
+      .inner.page__section {
+        .content__header {
+          flex-direction: column;
+          .page__title > span {
+            text-align: start;
+          }
+        }
+        .content__body {
+          flex-direction: column;
+          .img__wrapper {
+            margin-right: 0px;
+          }
+        }
+      }
+    }
+  }
 `;
 
 export default function Work(): JSX.Element {

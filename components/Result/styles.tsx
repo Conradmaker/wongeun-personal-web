@@ -36,4 +36,13 @@ export const IncompleteContainer = styled.div`
       margin-left: 30px;
     }
   }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    .inner {
+      padding: 0 20px 100px 20px;
+      padding-bottom: 100px;
+      img {
+        width: 100%;
+      }
+    }
+  }
 `;
