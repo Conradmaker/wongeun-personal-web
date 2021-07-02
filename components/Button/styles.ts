@@ -32,6 +32,11 @@ export const ToggleThemeBtnBox = styled(RoundBtnBox)<{ currentTheme: 'light' | '
         fill: #cec716;
       }
     `}
+
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    width: 100%;
+    height: 40px;
+  }
 `;
 
 export const ScrollDownBtnBox = styled.div`
@@ -65,6 +70,11 @@ export const CloseBtnBox = styled.button`
   right: 1100px;
   transform: translateX(50%);
   border-bottom: 1px solid #fff;
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    top: 2%;
+    right: 15%;
+    font-size: 16px;
+  }
 `;
 
 export const ScrollTopBtnBox = styled.div<{ visible: boolean }>`

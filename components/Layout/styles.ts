@@ -1,13 +1,18 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const LayoutContainer = styled.div`
   position: relative;
   min-height: 100vh;
   background-color: ${props => props.theme.background.initial};
   transition: background-color 0.3s ease-in-out;
+
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    max-width: 100vw;
+    overflow: hidden;
+  }
 `;
 
-export const HeaderContainer = styled.header`
+export const HeaderContainer = styled.header<{ mobileMenuOpen: boolean }>`
   z-index: 100;
   position: fixed;
   top: 0;
@@ -26,6 +31,9 @@ export const HeaderContainer = styled.header`
       font-weight: 600;
       cursor: pointer;
       color: ${({ theme }) => theme.textColor.primary};
+    }
+    .menu__btn {
+      display: none;
     }
     & > ul {
       display: flex;
@@ -48,14 +56,10 @@ export const HeaderContainer = styled.header`
             font-size: 24px;
           }
           &:hover {
-            a {
-              color: ${({ theme }) => theme.primary[1]};
-              text-align: center;
-              width: 100%;
-              height: 100%;
-              svg {
-                display: initial;
-              }
+            color: ${({ theme }) => theme.primary[1]};
+            text-align: center;
+            svg {
+              display: initial;
             }
             span {
               display: none;
@@ -70,6 +74,67 @@ export const HeaderContainer = styled.header`
   }
   &.light {
     background-color: ${({ theme }) => theme.background.lighter};
+  }
+
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    .inner {
+      padding: 0 20px;
+      .logo {
+        z-index: 100;
+      }
+      .menu__btn {
+        font-size: 24px;
+        color: ${({ theme }) => theme.textColor.primary};
+        display: initial;
+        z-index: 100;
+      }
+      & > ul {
+        display: none;
+      }
+    }
+    ${({ mobileMenuOpen }) =>
+      mobileMenuOpen &&
+      css`
+        & > .inner > ul {
+          animation: slideDown 0.6s ease-in-out;
+          @keyframes slideDown {
+            from {
+              opacity: 0;
+              transform: translateY(-500px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(00px);
+            }
+          }
+
+          z-index: 99;
+          background: ${({ theme }) => theme.background.initial};
+          transition: all 0.5s;
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          li {
+            width: 200px;
+            padding: 10px 0;
+            font-size: 28px;
+            margin: 10px 0;
+            &.git__link {
+              width: 200px;
+              display: block;
+            }
+          }
+          li: nth-of-type(2n-1) {
+            text-align: end;
+          }
+        }
+      `}
   }
 `;
 
@@ -116,6 +181,31 @@ export const FooterContainer = styled.div`
         a {
           color: #fff;
           font-weight: bold;
+        }
+      }
+    }
+  }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    .inner {
+      height: auto;
+      padding: 20px 0;
+      flex-direction: column;
+      & > * {
+        text-align: center;
+      }
+      .footer__left {
+        span,
+        p {
+          font-size: 12px;
+        }
+        p {
+          margin-bottom: 5px;
+        }
+      }
+      .footer__right {
+        ul > li {
+          text-align: center;
+          font-size: 12px;
         }
       }
     }

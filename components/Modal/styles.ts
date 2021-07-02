@@ -8,6 +8,16 @@ const slideLeft = keyframes`
         transform:translateX(0);
     }
 `;
+const slideUp = keyframes`
+    from{
+        opacity: 0;
+        transform:translateY(500px);
+    }
+    to{
+        opacity: 1;
+        transform:translateY(0);
+    }
+`;
 const fadeIn = keyframes`
     from{
         opacity:0;
@@ -49,5 +59,15 @@ export const IframeModalBox = styled(ModalBox)`
     background-color: #fff;
     width: 100%;
     height: 100%;
+  }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    width: 100vw;
+    height: 93%;
+    top: auto;
+    bottom: 0;
+    animation: ${slideUp} 0.4s ease-in-out;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
   }
 `;

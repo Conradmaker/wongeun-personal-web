@@ -3,20 +3,6 @@ import { WorkTitleSection } from './styles';
 import PageTitle from 'components/Typography/PageTitle';
 import ScrollDown from 'components/Button/ScrollDown';
 
-function ThumbnailItem(): JSX.Element {
-  return (
-    <li>
-      <img
-        src="https://image.freepik.com/free-vector/work-time-concept-website-template-landing-homepage-design-with-isometric-style-illustration_82472-636.jpg"
-        alt=""
-      />
-      <a href="#developic">
-        <span>Developic</span>
-      </a>
-    </li>
-  );
-}
-
 export default function WorkTitle(): JSX.Element {
   return (
     <WorkTitleSection>

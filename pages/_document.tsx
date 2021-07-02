@@ -54,7 +54,7 @@ class MyDocument extends Document {
             content="https://i.ibb.co/VBNRqWj/linkedin-banner-image-1.png"
           />
           <meta property="twitter:url" content="https://wongeun.xyz" />
-          <meta name="theme-color" content="#7a57d1" />
+          <meta name="theme-color" content="#39549A" />
 
           {/* 폰트 */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
