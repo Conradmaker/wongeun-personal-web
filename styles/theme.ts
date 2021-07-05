@@ -12,6 +12,7 @@ export type colorTheme = {
     initial: string;
     lighter: string;
     darker: string;
+    extraLighter: string;
   };
   textColor: {
     initial: string;
@@ -58,6 +59,7 @@ const theme: ThemeType = {
     background: {
       initial: '#1F2029',
       lighter: '#2C2E3A',
+      extraLighter: '#333',
       darker: '',
     },
     textColor: {
@@ -83,6 +85,7 @@ const theme: ThemeType = {
     background: {
       initial: '#F1F1F1',
       lighter: '#F6F6F6',
+      extraLighter: '#ccc',
       darker: '',
     },
     textColor: {
