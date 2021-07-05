@@ -15,7 +15,7 @@ export default function Header(): JSX.Element {
 
   const onToggleMobileMenu = React.useCallback(() => {
     setMobileMenuOpen(prev => !prev);
-    toggleGlobalModal(prev => !prev);
+    if (document.documentElement.clientWidth <= 770) toggleGlobalModal(prev => !prev);
   }, []);
 
   useEffect(() => {
