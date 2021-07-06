@@ -1,5 +1,8 @@
 import { CloseBtn } from 'components/Button/RoundBtn';
 import React from 'react';
+import { useState } from 'react';
+import { AiOutlineFullscreen, AiOutlineFullscreenExit } from 'react-icons/ai';
+import { CgClose } from 'react-icons/cg';
 import { ModalContainer, IframeModalBox } from './styles';
 
 type IframeModalProps = {
@@ -10,6 +13,7 @@ export default function IframeModal({
   onClose = () => null,
   src,
 }: IframeModalProps): JSX.Element {
+  const [fullMode, setFullMode] = useState(true);
   const onClickBg = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
     if (e.target === e.currentTarget) onClose();
@@ -18,7 +22,15 @@ export default function IframeModal({
   return (
     <ModalContainer onClick={onClickBg}>
       <CloseBtn onClick={onClose} />
-      <IframeModalBox>
+      <div className="btn__group">
+        <div className="btn__round" onClick={onClose}>
+          <CgClose />
+        </div>
+        <div className="btn__round" onClick={() => setFullMode(prev => !prev)}>
+          {fullMode ? <AiOutlineFullscreenExit /> : <AiOutlineFullscreen />}
+        </div>
+      </div>
+      <IframeModalBox fullMode={fullMode}>
         <iframe title={src + 'title'} src={src}></iframe>
       </IframeModalBox>
     </ModalContainer>

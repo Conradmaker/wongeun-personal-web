@@ -22,7 +22,11 @@ type CloseBtnProps = {
   onClick: () => void;
 };
 export function CloseBtn({ onClick }: CloseBtnProps): JSX.Element {
-  return <CloseBtnBox onClick={onClick}>CLOSE</CloseBtnBox>;
+  return (
+    <CloseBtnBox className="close__btn" onClick={onClick}>
+      CLOSE
+    </CloseBtnBox>
+  );
 }
 
 export function ScrollTopBtn(): JSX.Element {

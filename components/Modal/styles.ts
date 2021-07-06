@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 const slideLeft = keyframes`
     from{
@@ -30,13 +30,41 @@ const fadeIn = keyframes`
 `;
 export const ModalContainer = styled.div`
   position: fixed;
+  width: 100vw;
+  height: 100vh;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
   z-index: 200;
   background-color: ${({ theme }) => theme.layerColor.modalLayer};
   animation: ${fadeIn} 0.4s ease-in-out;
+  .btn__group {
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 30px;
+    background-color: #fff;
+    & > div {
+      transition: 0.3s;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      border-radius: 30px;
+      padding: 6px;
+      &:hover {
+        background-color: ${({ theme }) => theme.textColor.lighter};
+      }
+    }
+  }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    .btn__group {
+      display: none;
+    }
+  }
 `;
 
 const ModalBox = styled.div`
@@ -55,16 +83,24 @@ export const MoreSkillModalBox = styled(ModalBox)`
   width: 1000px;
 `;
 
-export const IframeModalBox = styled(ModalBox)`
+export const IframeModalBox = styled(ModalBox)<{ fullMode: boolean }>`
   width: 1000px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   overflow: hidden;
-  iframe {
+  transition: 0.3s ease-in-out;
+  & > iframe {
     background-color: #fff;
     width: 100%;
     height: 100%;
   }
+  ${({ fullMode }) =>
+    fullMode &&
+    css`
+      min-width: auto;
+      max-width: 1500px;
+      width: 100%;
+    `}
   @media ${({ theme }) => theme.viewPortSize.mobile} {
     width: 100vw;
     height: 93%;

@@ -70,10 +70,12 @@ export const CloseBtnBox = styled.button`
   right: 1100px;
   transform: translateX(50%);
   border-bottom: 1px solid #fff;
+  display: none;
   @media ${({ theme }) => theme.viewPortSize.mobile} {
     top: 2%;
     right: 15%;
     font-size: 16px;
+    display: initial;
   }
 `;
 
