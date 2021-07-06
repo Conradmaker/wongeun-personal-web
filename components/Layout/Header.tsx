@@ -26,7 +26,9 @@ export default function Header(): JSX.Element {
   return (
     <HeaderContainer mobileMenuOpen={mobileMenuOpen}>
       <div className="inner">
-        <div className="logo">Conrad.maker</div>
+        <Link href="/">
+          <div className="logo">Conrad.maker</div>
+        </Link>
         <div className="menu__btn" onClick={onToggleMobileMenu}>
           {mobileMenuOpen ? <RiCloseFill /> : <FaHamburger />}
         </div>

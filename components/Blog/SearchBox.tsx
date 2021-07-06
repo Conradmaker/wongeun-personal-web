@@ -1,5 +1,7 @@
 import { blogData, tagList } from 'data/blogData';
+import { useRouter } from 'next/router';
 import React from 'react';
+import { MdCancel } from 'react-icons/md';
 import { SearchBoxContainer } from './styles';
 
 const calcPostLength = (tagId: number) => {
@@ -9,23 +11,30 @@ const calcPostLength = (tagId: number) => {
   });
   return result;
 };
-
-function TagItem({ tagData }: { tagData: { id: number; name: string } }): JSX.Element {
+type TagItemProps = {
+  tagData: { id: number; name: string };
+};
+function TagItem({ tagData }: TagItemProps): JSX.Element {
+  const router = useRouter();
   const postLength = React.useMemo(() => calcPostLength(tagData.id), [tagData]);
+  const currentTag = router.query.tag || '9999';
+
+  const onClickTag = () => {
+    if (+currentTag === tagData.id) {
+      router.push(`${router.pathname}`);
+    } else {
+      router.push(`${router.pathname}/?tag=${tagData.id}`);
+    }
+  };
 
   return (
-    <li>
-      <strong>{tagData.name}</strong> <small>{postLength}</small>
+    <li onClick={onClickTag} className={+currentTag === tagData.id ? 'active' : ''}>
+      <b>{tagData.name}</b>
+      <small>{postLength}</small>
+      <strong>
+        <MdCancel />
+      </strong>
     </li>
-  );
-}
-
-function SearchInput(): JSX.Element {
-  return (
-    <form className="search__input">
-      <input type="text" placeholder="SEARCH" />
-      <div className="line"></div>
-    </form>
   );
 }
 
@@ -33,7 +42,6 @@ export default function SearchBox(): JSX.Element {
   return (
     <SearchBoxContainer>
       <div className="inner">
-        <SearchInput />
         <ul>
           {tagList.map(tag => (
             <TagItem key={tag.id + 'tag'} tagData={tag} />

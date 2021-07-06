@@ -1,5 +1,7 @@
 import { blogData, Post, tagList } from 'data/blogData';
+import { useRouter } from 'next/router';
 import React from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import { BlogListContainer, PostCardBox } from './styles';
 
@@ -39,10 +41,23 @@ type BlogListProps = {
   openPost: (src: string) => void;
 };
 export default function BlogList({ openPost }: BlogListProps): JSX.Element {
+  const [postList, setPostList] = useState(blogData);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.query.tag) {
+      setPostList(
+        blogData.filter(post => post.tags.includes(+(router.query.tag as string)))
+      );
+    } else {
+      setPostList(blogData);
+    }
+  }, [router.query]);
+
   return (
     <BlogListContainer>
       <div className="inner">
-        {blogData.map(post => (
+        {postList.map(post => (
           <PostCard key={post.id} postData={post} openPost={openPost} />
         ))}
       </div>

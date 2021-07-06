@@ -27,37 +27,6 @@ export const SearchBoxContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    .search__input {
-      width: 500px;
-      height: 40px;
-      position: relative;
-      input {
-        width: 100%;
-        height: 100%;
-        padding: 5px 10px;
-        font-size: 18px;
-        border: none;
-        outline: none;
-        background: none;
-        text-align: center;
-        border-bottom: 2px solid ${({ theme }) => theme.textColor.lighter};
-        letter-spacing: 0.9px;
-      }
-      .line {
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 00%;
-        height: 3px;
-        transition: all 0.4s;
-        background-color: ${({ theme }) => theme.textColor.primary};
-      }
-      input:focus + .line {
-        width: 100%;
-        left: 0%;
-      }
-    }
     ul {
       max-width: 700px;
       margin-top: 30px;
@@ -84,6 +53,20 @@ export const SearchBoxContainer = styled.div`
           color: ${({ theme }) => theme.textColor.lighter};
           font-size: 14px;
           text-indent: 5px;
+        }
+        strong {
+          display: none;
+          align-items: center;
+        }
+        &.active {
+          color: ${({ theme }) => theme.textColor.lighter};
+          background-color: ${({ theme }) => theme.textColor.primary};
+          small {
+            display: none;
+          }
+          strong {
+            display: flex;
+          }
         }
       }
     }
