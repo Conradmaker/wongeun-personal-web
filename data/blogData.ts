@@ -28,7 +28,7 @@ export const blogData = [
     src: 'https://www.craft.do/s/Oyb0htDtayXtv9',
     thumbnail:
       'https://www.innomedio.be/cache/upload/images/page/79/webpack-logo.jpg/1200x900-smart-fill-85.jpg',
-    tags: [0],
+    tags: [0, 5],
     createdAt: '2020-01-01',
   },
   {

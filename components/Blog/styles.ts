@@ -10,6 +10,15 @@ export const BlogTitleContainer = styled.div`
       }
     }
   }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    .inner.page__section {
+      padding: 0 20px;
+      .page__title > h1 {
+        margin-top: 30px;
+        font-size: 40px;
+      }
+    }
+  }
 `;
 
 export const BlogListContainer = styled.div`
@@ -18,6 +27,11 @@ export const BlogListContainer = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 50px 30px;
     padding-bottom: 250px;
+  }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    & > .inner {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 `;
 
@@ -69,6 +83,11 @@ export const SearchBoxContainer = styled.div`
           }
         }
       }
+    }
+  }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    .inner > ul > li {
+      margin: 5px 3px;
     }
   }
 `;
@@ -137,6 +156,11 @@ export const PostCardBox = styled.div`
     }
     .summary {
       color: ${({ theme }) => theme.textColor.primary};
+    }
+  }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    & > .img__wrapper {
+      height: 260px;
     }
   }
 `;
