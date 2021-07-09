@@ -13,7 +13,10 @@ export default function blog(): JSX.Element {
   const [postModalOpen, setPostModalOpen] = useState(false);
   const [currentPost, setCurrentPost] = useState('');
   const toggleGlobalModal = useToggleModalContext();
-  const animationRef = useGsap({ duration: 1, options: { opacity: 1 } });
+  const animationRef = useGsap<HTMLDivElement>({
+    from: { opacity: 0 },
+    to: { opacity: 1, duration: 1.8 },
+  });
 
   const openPostModal = useCallback((src: string) => {
     setCurrentPost(src);

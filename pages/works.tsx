@@ -58,7 +58,10 @@ export default function Work(): JSX.Element {
   const [docModalOpen, setDocModalOpen] = useState(false);
   const [currentDoc, setCurrentDoc] = useState('');
   const toggleGlobalModal = useToggleModalContext();
-  const animationRef = useGsap({ duration: 1, options: { opacity: 1 } });
+  const animationRef = useGsap<HTMLDivElement>({
+    from: { opacity: 0 },
+    to: { opacity: 1, duration: 1.8 },
+  });
   useChangeHeader();
 
   const onOpenDocModal = (link: string) => {

@@ -11,7 +11,10 @@ import useChangeHeader from 'hooks/useChangeHeader';
 import useGsap from 'hooks/useGsap';
 
 export default function Home(): JSX.Element {
-  const animationRef = useGsap({ duration: 1, options: { opacity: 1 } });
+  const animationRef = useGsap<HTMLDivElement>({
+    from: { opacity: 0 },
+    to: { opacity: 1, duration: 1.8 },
+  });
   useChangeHeader();
 
   return (
