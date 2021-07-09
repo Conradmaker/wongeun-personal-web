@@ -237,3 +237,16 @@ export const ScrollBar = styled.div<{ width: number }>`
     content: '${({ width }) => Math.floor(width)} %';
   }
 `;
+
+export const ResumeLayoutContainer = styled.div<{ scrollTop: number }>`
+  .inner {
+    max-width: 830px;
+    height: 100vh;
+  }
+  section {
+    height: 100vh;
+    border-bottom: 1px solid #eee;
+  }
+  transition: all 0.3s ease-in-out;
+  transform: translateY(${({ scrollTop }) => scrollTop}px);
+`;

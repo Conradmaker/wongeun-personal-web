@@ -36,7 +36,8 @@ const projectData: ProjectListData = {
     siteLink: 'https://developic.shop',
     docLink: 'https://www.craft.do/s/JtJncxG95X79qx',
     ghLink: '깃헙링크',
-    thumbnail: 'https://i.ibb.co/XJGDxTy/2021-06-28-4-27-46.png',
+    // thumbnail: 'https://i.ibb.co/XJGDxTy/2021-06-28-4-27-46.png',
+    thumbnail: 'https://i.ibb.co/MchWzvg/2021-07-09-11-49-45.png',
     shares: '80%',
     gif: 'https://i.ibb.co/L0fc5pJ/Jul-03-2021-00-24-51.gif',
     stack: {
@@ -58,7 +59,7 @@ const projectData: ProjectListData = {
     gif: 'https://i.ibb.co/Ttgj5tX/Jul-03-2021-00-23-36.gif',
     stack: {
       front: ['javaScript', 'react', 'redux', 'saga', 'styledComponents'],
-      back: ['typeScript', 'express', 'sequelize', 'aws', 'mySql'],
+      back: ['typeScript', 'express', 'sequelize', 'aws', 'azure', 'mySql', 'jest'],
     },
   },
   shoppingMall: {

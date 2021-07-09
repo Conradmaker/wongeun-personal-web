@@ -23,7 +23,7 @@ export default function useGsap<T extends Element>(
             a.kill(elRef.current as Element);
           }
         },
-        { threshold: 1 }
+        { threshold: 0.2 }
       );
       observer.observe(elRef.current as Element);
       return () => {
