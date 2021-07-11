@@ -87,7 +87,7 @@ export default function Works(): JSX.Element {
     customPaging: (i: number) => <div>{arr[i].title}</div>,
   };
   return (
-    <ResumeWorksContainer>
+    <ResumeWorksContainer id="resume__works">
       <div className="inner">
         <h2>개발 내역</h2>
       </div>

@@ -238,15 +238,20 @@ export const ScrollBar = styled.div<{ width: number }>`
   }
 `;
 
-export const ResumeLayoutContainer = styled.div<{ scrollTop: number }>`
+export const ResumeLayoutContainer = styled.div<{ scrollTop?: number }>`
+  position: relative;
+  overflow-x: hidden;
   .inner {
     max-width: 830px;
-    height: 100vh;
+    height: 100%;
+  }
+  b {
+    color: #4c80f1;
   }
   section {
-    height: 100vh;
-    border-bottom: 1px solid #eee;
+    /* height: 100vh; */
+    border-bottom: 1px solid #ffeeee;
   }
   transition: all 0.3s ease-in-out;
-  transform: translateY(${({ scrollTop }) => scrollTop}px);
+  /* transform: translateY(${({ scrollTop }) => scrollTop}px); */
 `;

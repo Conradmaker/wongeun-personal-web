@@ -2,30 +2,29 @@ import Icon, { IconName } from 'components/Icon/Icon';
 import skillList from 'data/skillListData';
 import useGsap from 'hooks/useGsap';
 import React from 'react';
-import { useState } from 'react';
 import SkillBody from './SkillBody';
 import { ResumeSkillsContainer } from './styles';
 
 export default function Skills(): JSX.Element {
-  const [power, setPower] = useState(0);
-  const onWheel = (e: React.WheelEvent<HTMLDivElement>) => {
-    const target = e.currentTarget as Element;
-    if (target.scrollTop === 0) {
-      console.log(power, '위');
-      setPower(prev => prev + 1);
-    } else if (target.scrollTop + target.clientHeight === target.scrollHeight) {
-      console.log(power, '아래');
-      setPower(prev => prev + 1);
-    } else {
-      console.log(target.scrollTop, power, 'else');
-      setPower(0);
-    }
-    if (power > 8) return setPower(0);
-    e.stopPropagation();
-  };
+  // const [power, setPower] = useState(0);
+  // const onWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+  //   const target = e.currentTarget as Element;
+  //   if (target.scrollTop === 0) {
+  //     console.log(power, '위');
+  //     setPower(prev => prev + 1);
+  //   } else if (target.scrollTop + target.clientHeight === target.scrollHeight) {
+  //     console.log(power, '아래');
+  //     setPower(prev => prev + 1);
+  //   } else {
+  //     console.log(target.scrollTop, power, 'else');
+  //     setPower(0);
+  //   }
+  //   if (power > 8) return setPower(0);
+  //   e.stopPropagation();
+  // };
 
   return (
-    <ResumeSkillsContainer onWheel={onWheel}>
+    <ResumeSkillsContainer className="skills" id="resume__skills">
       <div className="inner">
         <div className="skill__header">
           <h2>제가 할 수 있는 것은 이렇습니다.</h2>

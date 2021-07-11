@@ -3,7 +3,7 @@ import { ResumeTitleContainer } from './styles';
 
 export default function Title(): JSX.Element {
   return (
-    <ResumeTitleContainer>
+    <ResumeTitleContainer id="resume__title">
       <div className="inner">
         <h1>
           <span className="w700 fade-out">

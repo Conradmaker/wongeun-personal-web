@@ -3,7 +3,7 @@ import { ResumeSummaryContainer } from './styles';
 
 export default function Summary(): JSX.Element {
   return (
-    <ResumeSummaryContainer>
+    <ResumeSummaryContainer id="resume__summary">
       <div className="inner">
         <h2>
           저는 준비된

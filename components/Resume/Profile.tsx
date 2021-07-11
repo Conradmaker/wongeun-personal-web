@@ -3,7 +3,7 @@ import { ResumeProfileContainer } from './styles';
 
 export default function Profile(): JSX.Element {
   return (
-    <ResumeProfileContainer>
+    <ResumeProfileContainer id="resume__profile">
       <div className="inner">
         <h2>
           저 <b>유원근</b>은 이런 사람입니다.
@@ -22,7 +22,9 @@ export default function Profile(): JSX.Element {
             개발팀에 들어가 그 구성원이 되고 싶습니다.
           </p>
           <ul>
-            <li>EMAIL . yhg0337@gmail.com</li>
+            <li>
+              EMAIL . <a href="mailto:yhg0337@gmail.com"> yhg0337@gmail.com</a>
+            </li>
             <li>TEL . 010-8731-0337</li>
             <li>
               GitHub:

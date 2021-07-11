@@ -183,18 +183,20 @@ export const ResumeSkillsContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: scroll;
+  height: auto;
+  /* overflow: scroll; */
   &::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
   }
   .inner {
     padding: 50px 0;
+    height: auto;
     .skill__header {
       h2 {
         font-family: 'Spoqa Han Sans Neo', sans-serif;
         font-size: 36px;
         font-weight: 400;
-        margin-bottom: 40px;
+        margin: 50px 0;
       }
       h3 {
         font-weight: 500;
@@ -268,6 +270,7 @@ export const ResumeWorksContainer = styled.section`
   flex-direction: column;
   max-width: 1425px;
   margin: 0 auto;
+  min-height: 100vh;
   .inner {
     font-family: 'Spoqa Han Sans Neo', sans-serif;
     width: 100%;
@@ -436,21 +439,43 @@ export const ScrollBar = styled.div<{ width: number }>`
   left: 0;
   top: 0;
   &::after {
-    transition: width 0.4s ease-in-out;
     content: '';
+    transition: width 0.4s ease-in-out;
     display: block;
-    height: 7px;
+    height: 4px;
     background-color: #4c80f1;
+    transition: all 0.3s;
     width: ${({ width }) => width}%;
+  }
+`;
+
+export const ResumeNav = styled.nav<{ width: number }>`
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-weight: 300;
+  z-index: 9999;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+  a {
+    font-size: 14px;
+    padding: 5px 0;
+    text-decoration: none;
+    color: #aaa;
     transition: all 0.3s;
   }
-  &:hover&::after {
-    height: 30px;
-    padding: 5px 20px;
-    font-size: 20px;
-    text-align: end;
-    white-space: nowrap;
-    color: #fff;
-    content: '${({ width }) => Math.floor(width)} %';
+  a.active {
+    color: #4c80f1;
+  }
+  p {
+    width: 20px;
+    height: 23px;
+    margin-bottom: 3px;
+    color: #4c80f1;
+    border-bottom: 1px solid #4c80f1;
+    &::after {
+      content: '${({ width }) => Math.floor(width)}%';
+    }
   }
 `;
