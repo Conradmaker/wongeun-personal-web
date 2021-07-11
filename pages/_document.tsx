@@ -76,6 +76,11 @@ class MyDocument extends Document {
             crossOrigin="anonymous"
             referrerPolicy="no-referrer"
           />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+          />
           <link rel="icon" href="/favicon.png" />
         </Head>
         <body>

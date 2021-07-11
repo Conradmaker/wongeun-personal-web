@@ -306,16 +306,17 @@ export const ResumeWorksContainer = styled.section`
         cursor: pointer;
       }
       .slick-arrow.slick-prev {
-        right: 5px;
+        right: 20px;
       }
       .slick-arrow.slick-next {
-        left: 5px;
+        left: 20px;
       }
       .slick-dots {
         max-width: 830px;
         position: absolute;
         font-weight: 300;
         justify-content: space-between;
+        height: 36px;
         top: 0;
         left: 0;
         right: 0;
@@ -327,9 +328,10 @@ export const ResumeWorksContainer = styled.section`
           white-space: nowrap;
           display: flex;
           justify-content: center;
+          align-items: center;
           border-bottom: 2px solid #ddd;
           cursor: pointer;
-          padding: 7px 9px;
+          padding: 0 20px 10px 20px;
           transition: all 0.3s;
         }
         .slick-active {
@@ -337,6 +339,7 @@ export const ResumeWorksContainer = styled.section`
           border-bottom: 2px solid #4c80f1;
           color: #4c80f1;
           font-weight: 500;
+          font-size: 20px;
         }
       }
     }
@@ -344,10 +347,12 @@ export const ResumeWorksContainer = styled.section`
 `;
 export const ResumeWorksItemBox = styled.div`
   height: 100%;
-  padding: 0 200px;
+  padding: 0 250px;
   display: flex;
+  margin-top: 10px;
   img {
     max-width: 60%;
+    max-height: 500px;
     object-fit: contain;
   }
   .description {
@@ -355,9 +360,59 @@ export const ResumeWorksItemBox = styled.div`
     font-weight: 300;
     line-height: 1.4;
     width: 500px;
-    height: 600px;
-    padding: 20px;
+    padding: 5px 20px;
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    h4 {
+      font-size: 24px;
+      font-weight: 500;
+    }
+    p {
+      margin: 5px 0;
+      font-size: 18px;
+    }
+    .feature {
+      margin-bottom: 15px;
+      font-weight: 200;
+      flex: 1;
+      li {
+        list-style: circle;
+        padding: 2px 0;
+      }
+    }
+    .link {
+      position: absolute;
+      right: -100px;
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      li {
+        border-radius: 3px;
+        width: 50px;
+        height: 50px;
+        border: 2px solid #eee;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #4c80f1;
+        transition: all 0.3s;
+        svg {
+          font-size: 18px;
+          margin-right: 5px;
+        }
+        span {
+          font-size: 14px;
+        }
+        &:hover {
+          border: 2px solid #4c80f1;
+        }
+      }
+    }
     .stack {
       display: flex;
       flex-direction: column;
