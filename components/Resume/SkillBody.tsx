@@ -55,7 +55,7 @@ export default function SkillBody(): JSX.Element {
               <b>Next.js</b>를 활용한 SSR 및 SSG 개발 경험이 있습니다.
             </li>
             <li>
-              <b>SWR</b> 등의 상태관리 라이브러리 사용 경험이 있습니다.
+              <b>SWR</b> 등의 Data Fetching라이브러리를 통한 상태관리가 가능합니다.
             </li>
             <li>
               <b>Vue.js</b>, <b>Vuex</b> 개발 및 테스트코드 작성 경험이 있습니다.
@@ -72,10 +72,10 @@ export default function SkillBody(): JSX.Element {
               <b>ES6+</b> 문법사용에 익숙합니다.
             </li>
             <li>
-              <b>Webpack</b>을 이용한 번들링 경험 및 이해도가 있습니다.
+              <b>TypeScript</b>를 이용한 정적 타이핑이 가능합니다.
             </li>
             <li>
-              <b>TypeScript</b>를 이용한 정적 타이핑이 가능합니다.
+              <b>Webpack</b>을 이용한 번들링 경험 및 이해도가 있습니다.
             </li>
             <li>
               <b>Jest</b>를 활용한 테스트코드 작성 경험이 있습니다.
@@ -83,7 +83,7 @@ export default function SkillBody(): JSX.Element {
           </ul>
         </li>
         <li ref={ref3}>
-          <h3>W3C</h3>
+          <h3>HTML / CSS</h3>
           <ul className="summary__container">
             <li>웹표준을 지키려 노력합니다.</li>
             <li>
@@ -129,12 +129,16 @@ export default function SkillBody(): JSX.Element {
             <h3>Design</h3>
             <ul className="summary__container">
               <li>
-                <b>Figma</b>,<b>Adobe XD</b>를 사용할 수 있으며, <b>Jeplin</b>을 통한 협업
-                경험이 있습니다.
+                <b>Figma</b>,<b>Adobe XD</b>를 사용할 수 있으며,
               </li>
               <li>
-                <b>UX디자인리서치</b> 방법론, <b>서비스기획</b> 절차에 대하여 이해하고
-                있습니다.
+                <b>UX디자인리서치</b> 방법론을 이해하고 있습니다.
+              </li>
+              <li>
+                <b>서비스기획</b> 절차에 대하여 이해하고 활용해 본 경험이 있습니다.
+              </li>
+              <li>
+                <b>Jeplin</b>,<b>Miro</b>와 같은 다양한 협업 툴을 사용한 경험이 있습니다.
               </li>
             </ul>
           </article>
@@ -146,7 +150,7 @@ export default function SkillBody(): JSX.Element {
                 있습니다.
               </li>
               <li>
-                <b>S3, Lambda, Route53, RDS, EC2</b>등을 이용하여 AWS
+                <b>S3, Lambda, Route53, RDS, EC2</b>등의 AWS 리소스를 이용할 수 있습니다.
               </li>
               <li>
                 <b>AZ-900</b> Microsoft Azure Fundamentals 자격증이 있습니다.

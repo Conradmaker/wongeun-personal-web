@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 const fadeOut = keyframes`
       from{
         filter: blur(0px);
@@ -15,6 +15,34 @@ const toBig = keyframes`
       to{
           transform: scale(1);
       }
+`;
+const slideLeft = keyframes`
+    from{
+        transform:translateX(800px);
+        opacity: 0;
+    }
+    to{
+        transform:translateX(0);
+        opacity: 1;
+    }
+`;
+const slideUp = keyframes`
+    from{
+        opacity: 0;
+        transform:translateY(500px);
+    }
+    to{
+        opacity: 1;
+        transform:translateY(0);
+    }
+`;
+const fadeIn = keyframes`
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
 `;
 export const ResumeTitleContainer = styled.section`
   height: 100vh;
@@ -71,10 +99,10 @@ export const ResumeTitleContainer = styled.section`
   }
   @media (max-width: 770px) {
     .inner {
-      padding: 30px;
+      padding: 10px 20px 30px;
       font-size: 24px;
       h1 {
-        line-height: 44px;
+        line-height: 40px;
         .big {
           font-size: 28px;
         }
@@ -114,6 +142,23 @@ export const ResumeSummaryContainer = styled.section`
       }
     }
   }
+  @media (max-width: 770px) {
+    height: auto;
+    min-height: 100vh;
+    .inner {
+      margin: 30px 0;
+      padding: 0 20px;
+      min-height: 100vh;
+      & > ul {
+        grid-template-columns: repeat(1, 1fr);
+        li > h3 {
+          &::before {
+            content: '- ';
+          }
+        }
+      }
+    }
+  }
 `;
 
 export const ResumeProfileContainer = styled.section`
@@ -130,6 +175,9 @@ export const ResumeProfileContainer = styled.section`
     h2 {
       font-size: 36px;
       font-weight: 400;
+      br {
+        display: none;
+      }
     }
     blockquote {
       margin-top: 40px;
@@ -173,6 +221,63 @@ export const ResumeProfileContainer = styled.section`
           font-weight: 300;
           line-height: 2;
           font-size: 16px;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          flex-direction: row-reverse;
+          svg {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+          }
+          a {
+            color: #000;
+            text-decoration: none;
+          }
+          a:hover + svg,
+          a:hover {
+            fill: #4c80f1;
+            color: #4c80f1;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 770px) {
+    height: auto;
+    .inner {
+      height: auto;
+      min-height: 100vh;
+      padding: 0px 20px;
+      margin: 50px 0px;
+      h2 {
+        line-height: 1.2;
+        br {
+          display: initial;
+        }
+      }
+      blockquote {
+        margin-top: 40px;
+        strong {
+          font-size: 22px;
+          line-height: 1.5;
+        }
+        small {
+          font-size: 14px;
+        }
+      }
+      article {
+        padding-bottom: 20px;
+        flex-direction: column;
+        p {
+          margin-right: 5px;
+        }
+        ul {
+          flex: initial;
+          margin-top: 30px;
+          li {
+            justify-content: flex-start;
+          }
         }
       }
     }
@@ -197,6 +302,9 @@ export const ResumeSkillsContainer = styled.section`
         font-size: 36px;
         font-weight: 400;
         margin: 50px 0;
+        br {
+          display: none;
+        }
       }
       h3 {
         font-weight: 500;
@@ -217,6 +325,35 @@ export const ResumeSkillsContainer = styled.section`
           }
           span {
             font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 770px) {
+    .inner {
+      padding: 0 20px;
+      .skill__header {
+        h2 {
+          margin-top: 100px;
+          line-height: 1.5;
+          br {
+            display: initial;
+          }
+        }
+        ul {
+          padding: 7px 0 60px 0;
+          flex-wrap: wrap;
+          li {
+            padding: 15px 15px 15px 0;
+            svg {
+              width: 19px;
+              height: 19px;
+              margin-bottom: 4px;
+            }
+            span {
+              font-size: 12px;
+            }
           }
         }
       }
@@ -248,6 +385,7 @@ export const SkillsBodyContainer = styled.div`
         }
       }
       article {
+        flex: 1;
         padding-right: 20px;
         h3 {
           margin-bottom: 20px;
@@ -259,11 +397,39 @@ export const SkillsBodyContainer = styled.div`
       }
       article:nth-of-type(2n) {
         padding-left: 20px;
+        padding-right: 0;
         border-left: 1px solid #ddd;
       }
     }
   }
+  @media (max-width: 770px) {
+    .box__container {
+      & > li {
+        flex-direction: column;
+        h3 {
+          margin-bottom: 20px;
+        }
+        ul.summary__container {
+          li {
+            margin-left: 10px;
+            list-style: circle;
+          }
+        }
+        article {
+          width: 100%;
+          border-left: none;
+          padding-bottom: 60px;
+        }
+        article:nth-of-type(2n) {
+          border-left: none;
+          border-top: 1px solid #ddd;
+          padding: 60px 0 0 0;
+        }
+      }
+    }
+  }
 `;
+
 export const ResumeWorksContainer = styled.section`
   position: relative;
   display: flex;
@@ -271,17 +437,17 @@ export const ResumeWorksContainer = styled.section`
   max-width: 1425px;
   margin: 0 auto;
   min-height: 100vh;
+  padding: 70px 0 70px 0;
   .inner {
     font-family: 'Spoqa Han Sans Neo', sans-serif;
     width: 100%;
     height: auto;
-    padding: 50px 0 0px 0;
     position: static;
     display: block;
     h2 {
       font-size: 36px;
       font-weight: 400;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
   }
   .content {
@@ -347,6 +513,35 @@ export const ResumeWorksContainer = styled.section`
       }
     }
   }
+  @media (max-width: 770px) {
+    .inner {
+      padding: 0 20px;
+    }
+    .content {
+      padding: 0 20px;
+    }
+    .content > .slick-slider {
+      .slick-arrow.slick-prev {
+        width: 30px;
+        right: 0px;
+      }
+      .slick-arrow.slick-next {
+        width: 30px;
+        left: 0px;
+      }
+      .slick-dots {
+        max-width: 100vw;
+        width: 100%;
+        li {
+          font-size: 10px;
+          padding: 0 5px 5px 5px;
+        }
+        .slick-active {
+          font-size: 14px;
+        }
+      }
+    }
+  }
 `;
 export const ResumeWorksItemBox = styled.div`
   height: 100%;
@@ -368,11 +563,8 @@ export const ResumeWorksItemBox = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
-    h4 {
-      font-size: 24px;
-      font-weight: 500;
-    }
     p {
+      font-weight: 500;
       margin: 5px 0;
       font-size: 18px;
     }
@@ -406,7 +598,6 @@ export const ResumeWorksItemBox = styled.div`
         transition: all 0.3s;
         svg {
           font-size: 18px;
-          margin-right: 5px;
         }
         span {
           font-size: 14px;
@@ -431,6 +622,44 @@ export const ResumeWorksItemBox = styled.div`
       }
     }
   }
+  @media (max-width: 770px) {
+    flex-direction: column;
+    padding: 0 00px;
+    img {
+      max-width: 100%;
+      width: 100%;
+      max-height: auto;
+    }
+    .description {
+      width: 100%;
+      .feature {
+        margin-bottom: 25px;
+        font-weight: 200;
+        flex: 1;
+        li {
+          list-style: circle;
+          padding: 2px 0;
+        }
+      }
+      .link {
+        bottom: 0px;
+        right: 0;
+        li {
+          width: 45px;
+          height: 45px;
+        }
+      }
+      .stack {
+        ul > li {
+          padding: 5px 12px 10px 0;
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
 `;
 export const ScrollBar = styled.div<{ width: number }>`
   position: fixed;
@@ -449,7 +678,7 @@ export const ScrollBar = styled.div<{ width: number }>`
   }
 `;
 
-export const ResumeNav = styled.nav<{ width: number }>`
+export const ResumeNav = styled.nav<{ width: number; open: boolean }>`
   font-family: 'Spoqa Han Sans Neo', sans-serif;
   font-weight: 300;
   z-index: 9999;
@@ -468,6 +697,15 @@ export const ResumeNav = styled.nav<{ width: number }>`
   a.active {
     color: #4c80f1;
   }
+  .menu {
+    display: flex;
+    align-items: center;
+    i {
+      display: none;
+      font-size: 25px;
+      color: #4c80f1;
+    }
+  }
   p {
     width: 20px;
     height: 23px;
@@ -477,5 +715,138 @@ export const ResumeNav = styled.nav<{ width: number }>`
     &::after {
       content: '${({ width }) => Math.floor(width)}%';
     }
+  }
+  @media screen and (max-width: 768px) {
+    cursor: pointer;
+    height: 32px;
+    width: auto;
+    overflow: hidden;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 5px 10px 0px 8px;
+    border-radius: 15px;
+    transition: all 0.3s;
+    .menu {
+      p {
+        width: auto;
+        height: 18px;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      i {
+        margin-right: 5px;
+        display: initial;
+        svg {
+          transition: all 0.3s;
+        }
+      }
+    }
+    a {
+      font-size: 18px;
+      padding: 5px 0;
+    }
+    ${({ open }) =>
+      open &&
+      css`
+        height: 180px;
+        .menu > i > svg {
+          transform: rotate(180deg);
+        }
+      `}
+  }
+`;
+
+export const ModalContainer = styled.div`
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  background-color: rgba(115, 115, 115, 0.4);
+  animation: ${fadeIn} 0.4s ease-in-out;
+  .btn__group {
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 30px;
+    background-color: #fff;
+    & > div {
+      transition: 0.3s;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      border-radius: 30px;
+      padding: 6px;
+      &:hover {
+        background-color: #aaa;
+      }
+    }
+  }
+  .close__btn {
+    cursor: pointer;
+    background: none;
+    color: #fff;
+    position: absolute;
+    font-size: 20px;
+    top: 2%;
+    right: 15%;
+    z-index: 9999;
+    transform: translateX(50%);
+    border-bottom: 1px solid #fff;
+    display: none;
+  }
+  @media (max-width: 770px) {
+    .btn__group {
+      display: none;
+    }
+    .close__btn {
+      top: 2%;
+      right: 15%;
+      font-size: 16px;
+      display: initial;
+    }
+  }
+`;
+export const IframeModalBox = styled.div<{ fullMode: boolean }>`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: '#F6F6F6';
+  box-shadow: 0 0 20px #000;
+  animation: ${slideLeft} 0.5s ease-in-out;
+  width: 1000px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  & > iframe {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+  }
+  ${({ fullMode }) =>
+    fullMode &&
+    css`
+      min-width: auto;
+      max-width: 1500px;
+      width: 100%;
+    `}
+  @media (max-width: 770px) {
+    width: 100vw;
+    height: 93%;
+    top: auto;
+    bottom: 0;
+    border-bottom-left-radius: 0px;
+    animation: ${slideUp} 0.4s ease-in-out;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
 `;

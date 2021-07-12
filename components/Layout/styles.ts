@@ -249,9 +249,7 @@ export const ResumeLayoutContainer = styled.div<{ scrollTop?: number }>`
     color: #4c80f1;
   }
   section {
-    /* height: 100vh; */
     border-bottom: 1px solid #ffeeee;
   }
   transition: all 0.3s ease-in-out;
-  /* transform: translateY(${({ scrollTop }) => scrollTop}px); */
 `;

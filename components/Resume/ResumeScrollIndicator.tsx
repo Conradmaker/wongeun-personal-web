@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { IoIosArrowDown } from 'react-icons/io';
 import throttle from 'utils/throttle';
 import { ResumeNav, ScrollBar } from './styles';
 
@@ -11,11 +12,16 @@ const navData = [
 ];
 
 export default function ResumeScrollIndicator(): JSX.Element {
+  const [open, setOpen] = useState(false);
   const [width, setWidth] = useState(0);
   const [currentSection, setCurrentSection] = useState('title');
 
   useEffect(() => {
-    console.log(document.querySelector('#resume__summary')?.getBoundingClientRect().top);
+    setCurrentSection('title');
+
+    const getOffsetSection = (id: string) =>
+      (document.querySelector(`#resume__${id}`) as Element).getBoundingClientRect().top;
+
     const indicator = throttle(() => {
       const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
       const scrollHeight =
@@ -25,7 +31,13 @@ export default function ResumeScrollIndicator(): JSX.Element {
       const contentHeight = scrollHeight - clientHeight;
       const percent = (scrollTop / contentHeight) * 100;
       setWidth(percent);
-    }, 50);
+
+      if (150 > getOffsetSection('works')) setCurrentSection('works');
+      else if (150 > getOffsetSection('summary')) setCurrentSection('summary');
+      else if (150 > getOffsetSection('skills')) setCurrentSection('skills');
+      else if (150 > getOffsetSection('profile')) setCurrentSection('profile');
+      else if (0 > getOffsetSection('title')) setCurrentSection('title');
+    }, 200);
 
     window.addEventListener('scroll', indicator);
     return () => {
@@ -33,30 +45,15 @@ export default function ResumeScrollIndicator(): JSX.Element {
     };
   }, []);
 
-  useEffect(() => {
-    setCurrentSection('title');
-
-    const getOffsetSection = (id: string) =>
-      (document.querySelector(`#resume__${id}`) as Element).getBoundingClientRect().top;
-
-    const indicator2 = throttle(() => {
-      if (150 > getOffsetSection('works')) setCurrentSection('works');
-      else if (150 > getOffsetSection('summary')) setCurrentSection('summary');
-      else if (150 > getOffsetSection('skills')) setCurrentSection('skills');
-      else if (150 > getOffsetSection('profile')) setCurrentSection('profile');
-      else if (0 > getOffsetSection('title')) setCurrentSection('title');
-    }, 300);
-
-    window.addEventListener('scroll', indicator2);
-    return () => {
-      window.removeEventListener('scroll', indicator2);
-    };
-  }, []);
-  console.log(currentSection);
   return (
     <>
-      <ResumeNav width={width}>
-        <p></p>
+      <ResumeNav width={width} open={open}>
+        <div className="menu">
+          <i onClick={() => setOpen(prev => !prev)}>
+            <IoIosArrowDown />
+          </i>
+          <p></p>
+        </div>
         {navData.map(navItem => (
           <a
             key={navItem.id + 'nav'}

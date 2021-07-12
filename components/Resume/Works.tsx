@@ -1,17 +1,20 @@
 import Icon from 'components/Icon/Icon';
 import projectData, { ProjectData } from 'data/worksData';
-import React from 'react';
+import { useToggleModalContext } from 'hooks/ModalStateProvider';
+import React, { useState } from 'react';
 import { BiLink } from 'react-icons/bi';
 import { CgFileDocument } from 'react-icons/cg';
 import { FaGithubAlt } from 'react-icons/fa';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 import Slider, { CustomArrowProps } from 'react-slick';
 import { ResumeWorksContainer, ResumeWorksItemBox } from './styles';
+import IframeModal from './IframeModal';
 
 type WorkItemProps = {
   project: ProjectData;
+  openDoc: (link: string) => void;
 };
-function WorkItem({ project }: WorkItemProps): JSX.Element {
+function WorkItem({ project, openDoc }: WorkItemProps): JSX.Element {
   return (
     <ResumeWorksItemBox>
       <img src={project.thumbnail} alt="thumbnail" />
@@ -29,32 +32,35 @@ function WorkItem({ project }: WorkItemProps): JSX.Element {
               <span>Link</span>
             </li>
           )}
+          {project.docLink && (
+            <li onClick={() => openDoc(project.docLink)}>
+              <CgFileDocument />
+              <span>Doc</span>
+            </li>
+          )}
           {project.ghLink && (
             <li onClick={() => window.open(project.ghLink)}>
               <FaGithubAlt />
               <span>Code</span>
             </li>
           )}
-          {project.docLink && (
-            <li onClick={() => window.open(project.docLink)}>
-              <CgFileDocument />
-              <span>Doc</span>
-            </li>
-          )}
         </ul>
         <div className="stack">
-          {Object.entries(project.stack).map(([key, skills]) => (
-            <React.Fragment key={project.id + key + 'stack__list'}>
-              <h3>{key}</h3>
-              <ul>
-                {skills.map(skill => (
-                  <li key={project + key + skill}>
-                    <Icon name={skill} />
-                  </li>
-                ))}
-              </ul>
-            </React.Fragment>
-          ))}
+          {Object.entries(project.stack).map(
+            ([key, skills]) =>
+              skills.length !== 0 && (
+                <React.Fragment key={project.id + key + 'stack__list'}>
+                  <h3>{key}</h3>
+                  <ul>
+                    {skills.map(skill => (
+                      <li key={project + key + skill}>
+                        <Icon name={skill} />
+                      </li>
+                    ))}
+                  </ul>
+                </React.Fragment>
+              )
+          )}
         </div>
       </div>
     </ResumeWorksItemBox>
@@ -75,7 +81,23 @@ function Arrow({ onClick, type }: ArrowProps): JSX.Element {
   );
 }
 export default function Works(): JSX.Element {
+  const [docModalOpen, setDocModalOpen] = useState(false);
+  const [currentDoc, setCurrentDoc] = useState('');
+  const toggleGlobalModal = useToggleModalContext();
+
+  const onOpenDocModal = (link: string) => {
+    setCurrentDoc(link);
+    setDocModalOpen(true);
+    toggleGlobalModal();
+  };
+
+  const onCloseDocModal = () => {
+    toggleGlobalModal();
+    setDocModalOpen(false);
+  };
+
   const arr = Object.entries(projectData).map(([, value]) => value);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -89,15 +111,16 @@ export default function Works(): JSX.Element {
   return (
     <ResumeWorksContainer id="resume__works">
       <div className="inner">
-        <h2>개발 내역</h2>
+        <h2>개발 경험</h2>
       </div>
       <div className="content">
         <Slider {...settings}>
           {Object.entries(projectData).map(([key, value]) => {
-            return <WorkItem key={key} project={value} />;
+            return <WorkItem key={key} project={value} openDoc={onOpenDocModal} />;
           })}
         </Slider>
       </div>
+      {docModalOpen && <IframeModal src={currentDoc} onClose={onCloseDocModal} />}
     </ResumeWorksContainer>
   );
 }

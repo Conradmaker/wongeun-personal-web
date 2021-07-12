@@ -16,7 +16,7 @@ export type ProjectData = {
   gif: string;
   stack: {
     front: IconType[] | [];
-    back?: IconType[] | [];
+    back: IconType[] | [];
   };
   desc: string[];
 };
@@ -32,7 +32,7 @@ const projectData: ProjectListData = {
     ghLink: '깃헙링크',
     // thumbnail: 'https://i.ibb.co/XJGDxTy/2021-06-28-4-27-46.png',
     thumbnail: 'https://i.ibb.co/MchWzvg/2021-07-09-11-49-45.png',
-    shares: '80%',
+    shares: '0%',
     gif: 'https://i.ibb.co/L0fc5pJ/Jul-03-2021-00-24-51.gif',
     stack: {
       front: ['typeScript', 'next', 'react', 'redux', 'styledComponents'],
@@ -62,7 +62,7 @@ const projectData: ProjectListData = {
     ghLink: 'https://github.com/forCozi/ikea-clone-client',
     // thumbnail: 'https://i.imgur.com/623unUu.png',
     thumbnail: 'https://i.ibb.co/5TTvWWc/2021-07-11-6-36-43.png',
-    shares: '80%',
+    shares: '0%',
     gif: 'https://i.ibb.co/Ttgj5tX/Jul-03-2021-00-23-36.gif',
     stack: {
       front: ['javaScript', 'react', 'redux', 'saga', 'styledComponents'],
@@ -86,12 +86,12 @@ const projectData: ProjectListData = {
     summary: '쇼핑몰 프로젝트',
     type: '개인프로젝트',
     feature: '특징',
-    siteLink: 'https://wikea.shop',
+    siteLink: '',
     docLink: 'https://www.craft.do/s/MpbDWC9Bn6ZRSh',
     ghLink: 'https://github.com/Conradmaker/shopping-mall-project',
     // thumbnail: 'https://i.ibb.co/3fCQG2j/2021-06-28-4-49-37.png',
     thumbnail: 'https://i.ibb.co/tB9JBqp/2021-07-12-2-06-19.png',
-    shares: '80%',
+    shares: '100%',
     gif: '움짤',
     stack: {
       front: ['typeScript', 'react', 'redux', 'styledComponents'],
@@ -120,6 +120,7 @@ const projectData: ProjectListData = {
     gif: '움짤',
     stack: {
       front: ['javaScript', 'vueJs', 'vuex', 'sass'],
+      back: [],
     },
     desc: [
       'interpark-api CORS해결을 위한 배포시 netlify PROXY',
@@ -143,6 +144,7 @@ const projectData: ProjectListData = {
     gif: '움짤',
     stack: {
       front: ['javaScript'],
+      back: [],
     },
     desc: [
       'gsap을 이용한 스크롤 트리거 애니메이션 사용',

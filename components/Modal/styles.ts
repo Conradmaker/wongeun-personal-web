@@ -35,7 +35,7 @@ export const ModalContainer = styled.div`
   top: 0;
   left: 0;
   z-index: 200;
-  background-color: ${({ theme }) => theme.layerColor.modalLayer};
+  background-color: rgba(115, 115, 115, 0.4);
   animation: ${fadeIn} 0.4s ease-in-out;
   .btn__group {
     z-index: 99;
@@ -60,7 +60,7 @@ export const ModalContainer = styled.div`
       }
     }
   }
-  @media ${({ theme }) => theme.viewPortSize.mobile} {
+  @media (max-width: 770px) {
     .btn__group {
       display: none;
     }
