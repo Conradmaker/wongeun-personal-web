@@ -10,6 +10,7 @@ import { useModalOpenContext } from 'hooks/ModalStateProvider';
 const Global = createGlobalStyle<{ globalModalOpen: boolean }>`
   html{
       overflow-y: scroll !important;
+      transition: all .3s;
       background: ${({ theme }) => theme.background.initial};
   }
   ${({ globalModalOpen }) =>

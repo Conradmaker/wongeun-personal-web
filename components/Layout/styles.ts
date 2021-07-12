@@ -4,7 +4,7 @@ export const LayoutContainer = styled.div`
   position: relative;
   min-height: 100vh;
   background-color: ${props => props.theme.background.initial};
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s;
 
   @media ${({ theme }) => theme.viewPortSize.mobile} {
     max-width: 100vw;
@@ -43,6 +43,10 @@ export const HeaderContainer = styled.header<{ mobileMenuOpen: boolean }>`
         color: ${({ theme }) => theme.textColor.primary};
         cursor: pointer;
         margin-right: 20px;
+        a {
+          color: inherit;
+          text-decoration: inherit;
+        }
         &:hover {
           text-decoration: underline;
         }

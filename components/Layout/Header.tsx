@@ -36,6 +36,11 @@ export default function Header(): JSX.Element {
           <Link href="/">
             <li onClick={onToggleMobileMenu}>ABOUT</li>
           </Link>
+          <li onClick={onToggleMobileMenu}>
+            <a target="about:blank" href="/resume">
+              PORTFOLIO
+            </a>
+          </li>
           <Link href="/works">
             <li onClick={onToggleMobileMenu}>WORKS</li>
           </Link>

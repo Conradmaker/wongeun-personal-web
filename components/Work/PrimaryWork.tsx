@@ -41,26 +41,16 @@ export default function PrimaryWork({
         <div className="content__body">
           <ul>
             <li>
-              <strong>{projectData.type}</strong>
-            </li>
-            <li>
-              <strong>비중</strong>
-              <small>{projectData.shares}</small>
-            </li>
-            <li>
-              <strong>역할</strong>
-              <small>
-                역할이 없다..역할이 없다..역할이 없다..역할이 없다..역할이 없다..역할이
-                없다..역할이 없다..역할이 없다..역할이 없다..역할이 없다..
-              </small>
-            </li>
-            <li>
               <strong>특징</strong>
-              <small>{projectData.feature}</small>
+              <ul className="feature">
+                {projectData.desc.map(item => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </li>
             <li>
               <strong>링크</strong>
-              <ul>
+              <ul className="link">
                 {projectData.siteLink && (
                   <li onClick={() => window.open(projectData.siteLink)}>
                     <BiLink />

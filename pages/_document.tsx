@@ -35,7 +35,7 @@ class MyDocument extends Document {
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content="Conrad.maker" />
           <meta property="og:title" content="Conrad.maker" />
-          <meta property="og:description" content="피할수 없기에 즐기는 유원근입니다." />
+          <meta property="og:description" content="주니어 개발자 유원근입니다." />
           <meta
             property="og:image"
             content="https://i.ibb.co/VBNRqWj/linkedin-banner-image-1.png"
@@ -45,10 +45,7 @@ class MyDocument extends Document {
           <meta property="twitter:card" content="summary" />
           <meta property="twitter:site" content="Conrad.maker" />
           <meta property="twitter:title" content="Conrad.maker" />
-          <meta
-            property="twitter:description"
-            content="피할수 없기에 즐기는 유원근입니다."
-          />
+          <meta property="twitter:description" content="주니어 개발자 유원근입니다." />
           <meta
             property="twitter:image"
             content="https://i.ibb.co/VBNRqWj/linkedin-banner-image-1.png"

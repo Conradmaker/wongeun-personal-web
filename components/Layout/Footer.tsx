@@ -13,7 +13,9 @@ export default function Footer(): JSX.Element {
         <div className="footer__right">
           <ul>
             <li>TEL . 010 - 8731 - 0337</li>
-            <li>Email . yhg0337@gmail.com</li>
+            <li>
+              Email . <a href="mailto:yhg0337@gmail.com"> yhg0337@gmail.com</a>
+            </li>
             <li>
               <a href="https://github.com/Conradmaker" target="_blank">
                 visit Github

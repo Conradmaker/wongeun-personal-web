@@ -10,6 +10,40 @@ export const MainTitleContainer = styled.section`
     & > div {
       flex: 1;
     }
+    & > div > ul {
+      width: 150px;
+      li {
+        width: 170px;
+        height: 40px;
+        cursor: pointer;
+        font-size: 24px;
+        font-weight: 500;
+        transition: all 0.3s;
+        a {
+          text-indent: 20px;
+          background: ${({ theme }) => theme.textColor.primary};
+          width: 2px;
+          height: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          color: ${({ theme }) => theme.textColor.initial};
+          text-decoration: none;
+          transition: all 0.3s;
+        }
+        &:hover {
+          a {
+            margin: 0;
+            width: 100%;
+            color: #fff;
+          }
+        }
+      }
+
+      li + li {
+        margin-top: 30px;
+      }
+    }
   }
   @media ${({ theme }) => theme.viewPortSize.mobile} {
     .inner {
@@ -19,6 +53,35 @@ export const MainTitleContainer = styled.section`
       padding-right: 20px;
       article {
         margin-bottom: 50px;
+      }
+      & > div > ul {
+        margin-top: 30px;
+        display: flex;
+        width: 100vw;
+        align-items: center;
+        justify-content: space-between;
+        li {
+          flex: 1;
+          width: auto;
+          a {
+            font-size: 18px;
+            width: 100%;
+            justify-content: center;
+            text-indent: 0;
+            background: none;
+            svg {
+              display: none;
+            }
+          }
+        }
+        li:nth-of-type(2) {
+          height: 25px;
+          border-left: 1px solid ${({ theme }) => theme.textColor.primary};
+          border-right: 1px solid ${({ theme }) => theme.textColor.primary};
+        }
+        li + li {
+          margin-top: 0px;
+        }
       }
     }
   }

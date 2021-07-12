@@ -1,6 +1,7 @@
-import ScrollDown from 'components/Button/ScrollDown';
 import PageTitle from 'components/Typography/PageTitle';
+import Link from 'next/link';
 import React from 'react';
+import { IoIosArrowForward } from 'react-icons/io';
 import { MainTitleContainer } from './styles';
 
 export default function MainTitle(): JSX.Element {
@@ -8,10 +9,28 @@ export default function MainTitle(): JSX.Element {
     <MainTitleContainer>
       <div className="inner page__section">
         <div>
-          <ScrollDown />
+          <ul>
+            <li>
+              <a target="about:blank" href="/resume">
+                Portfolio <IoIosArrowForward />
+              </a>
+            </li>
+            <Link href="/blog">
+              <li>
+                <a href="@">
+                  Blog <IoIosArrowForward />
+                </a>
+              </li>
+            </Link>
+            <li>
+              <a href="#contact">
+                Contact <IoIosArrowForward />
+              </a>
+            </li>
+          </ul>
         </div>
         <PageTitle width={600} height={380}>
-          <p>A Developer</p>
+          <p>A Front-End Developer</p>
           <h1>
             <em>Y</em>oo
             <br />
@@ -19,7 +38,9 @@ export default function MainTitle(): JSX.Element {
             <em>g</em>eun
           </h1>
           <h2>
-            Hello! I am the developer <br /> Wongeun Yoo.
+            Not only Front-End,
+            <br />
+            But also Back-End, Design
           </h2>
         </PageTitle>
       </div>

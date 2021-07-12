@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const BlogTitleContainer = styled.div`
   .inner.page__section {
-    margin: 100px auto 50px auto;
+    margin: 60px auto 50px auto;
+    padding-top: 80px;
     .page__title {
       text-align: center;
       h1 {

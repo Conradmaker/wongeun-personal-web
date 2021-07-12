@@ -82,7 +82,7 @@ export const ResumeTitleContainer = styled.section`
       }
       .fade-out {
         color: #555;
-        animation: ${fadeOut} 1.4s ease-in-out 0.7s forwards;
+        animation: ${fadeOut} 1.4s ease-in-out 1s forwards;
       }
       .to-big {
         transform: translateZ(100px);
@@ -521,12 +521,14 @@ export const ResumeWorksContainer = styled.section`
       padding: 0 20px;
     }
     .content > .slick-slider {
-      .slick-arrow.slick-prev {
+      .slick-arrow {
         width: 30px;
+        top: 30%;
+      }
+      .slick-arrow.slick-prev {
         right: 0px;
       }
       .slick-arrow.slick-next {
-        width: 30px;
         left: 0px;
       }
       .slick-dots {

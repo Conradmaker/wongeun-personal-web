@@ -42,7 +42,7 @@ export default function Contact(): JSX.Element {
   };
 
   return (
-    <ContactContainer>
+    <ContactContainer id="contact">
       <div className="inner page__section">
         <SideTitle value="CONTACT" />
         <PageTitle width={600} height={380}>
@@ -51,8 +51,8 @@ export default function Contact(): JSX.Element {
             <em>감</em>사합니다
           </h1>
           <h2>
-            개선사항이나 궁금한점이 있으시다면
-            <br /> 연락 부탁 드립니다
+            개선사항이나 궁금한점을
+            <br /> 보내주세요
           </h2>
         </PageTitle>
         <form onSubmit={onSubmit} className="email__form">

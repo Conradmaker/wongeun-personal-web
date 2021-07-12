@@ -23,6 +23,7 @@ export const PageTitleBox = styled.article<{ width?: number; height?: number }>`
     text-align: end;
     color: ${({ theme }) => theme.textColor.lighter};
     font-size: 28px;
+    line-height: 1.2;
   }
   ${({ width }) =>
     width &&

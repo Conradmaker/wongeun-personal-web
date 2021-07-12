@@ -42,26 +42,29 @@ export default function SkillBody(): JSX.Element {
     <SkillsBodyContainer>
       <ul className="box__container">
         <li ref={ref1}>
-          <h3>React</h3>
+          <h3>React, Vue</h3>
           <ul className="summary__container">
             <li>
               <b>React</b>의 스펙에 대하여 이해하고 사용하는 것에 익숙합니다.
             </li>
             <li>
-              <b>Redux</b> 및 <b>redux-toolkit</b>을 이용하여 다양한 미들웨어 사용경험이
-              있습니다.
+              <b>Redux</b> 및 <b>redux-toolkit</b>을 이용하여 다양한 미들웨어 사용에
+              익숙합니다.
             </li>
             <li>
               <b>Next.js</b>를 활용한 SSR 및 SSG 개발 경험이 있습니다.
             </li>
             <li>
-              <b>SWR</b> 등의 Data Fetching라이브러리를 통한 상태관리가 가능합니다.
+              styled-components, emotion과 같은 <b>CSS-in-JS</b> 사용에 익숙합니다.
+            </li>
+            <li>
+              <b>SWR</b> 등의 Data Fetching 라이브러리를 사용경험이 있습니다.
             </li>
             <li>
               <b>Vue.js</b>, <b>Vuex</b> 개발 및 테스트코드 작성 경험이 있습니다.
             </li>
             <li>
-              <b>react-native</b> 사용 경험이 있습니다.
+              <b>React-native</b> 사용 경험이 있습니다.
             </li>
           </ul>
         </li>
@@ -90,8 +93,7 @@ export default function SkillBody(): JSX.Element {
               <b>Webpack</b>을 이용한 번들링 경험 및 이해도가 있습니다.
             </li>
             <li>
-              <b>SCSS</b> 문법에 익숙하며 <b>styled-component</b>, <b>emotion</b>을 활용할
-              수 있습니다.
+              <b>SCSS</b> 문법에 익숙합니다.
             </li>
             <li>
               <b>Antd, Vuetify, BootStrap</b> 등의 css 라이브러리를 사용할 수 있습니다.
@@ -129,10 +131,11 @@ export default function SkillBody(): JSX.Element {
             <h3>Design</h3>
             <ul className="summary__container">
               <li>
-                <b>Figma</b>,<b>Adobe XD</b>를 사용할 수 있으며,
+                <b>Figma</b>, <b>Adobe XD</b>를 사용하여 디자인 시스템을 구축할 수
+                있습니다.
               </li>
               <li>
-                <b>UX디자인리서치</b> 방법론을 이해하고 있습니다.
+                <b>UX디자인리서치</b> 방법론에 대하여 이해하고 있습니다.
               </li>
               <li>
                 <b>서비스기획</b> 절차에 대하여 이해하고 활용해 본 경험이 있습니다.

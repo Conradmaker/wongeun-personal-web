@@ -13,7 +13,9 @@ export default function WorkTitle(): JSX.Element {
             <em>P</em>ortfolio
           </h1>
           <h2>
-            Hello! I am the developer <br /> Wongeun Yoo.
+            Introducing my projects!
+            <br />
+            Thank you
           </h2>
         </PageTitle>
         <ScrollDown />

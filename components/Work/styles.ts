@@ -86,7 +86,16 @@ export const PrimaryWorkContainer = styled.section`
             line-height: 1.3;
             font-size: 15px;
           }
-          ul {
+          .feature {
+            color: ${({ theme }) => theme.textColor.warm};
+            font-weight: 300;
+            li {
+              list-style: circle;
+              padding: 5px 0;
+              letter-spacing: 0.9px;
+            }
+          }
+          .link {
             display: flex;
             margin-top: 10px;
             li {
@@ -194,8 +203,8 @@ export const EtcListContainer = styled.section`
       margin-top: 50px;
       padding-bottom: 200px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 50px 30px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 80px 50px;
     }
   }
   @media ${({ theme }) => theme.viewPortSize.mobile} {
@@ -215,6 +224,7 @@ export const EtcListContainer = styled.section`
         margin-top: 50px;
         padding-bottom: 200px;
         grid-template-columns: repeat(1, 1fr);
+        grid-gap: 50px 30px;
       }
     }
   }
@@ -222,18 +232,19 @@ export const EtcListContainer = styled.section`
 
 export const ProjectItemBox = styled.li`
   width: 100%;
-  height: 220px;
+  height: 300px;
   background-color: #aaa;
   position: relative;
-  border-radius: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 5px;
   }
   .item__layer {
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
     color: #fff;
     position: absolute;

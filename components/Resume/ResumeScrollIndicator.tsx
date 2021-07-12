@@ -7,8 +7,8 @@ const navData = [
   { id: 'title', value: 'TOP' },
   { id: 'profile', value: '소개' },
   { id: 'skills', value: '기술' },
-  { id: 'summary', value: '이유' },
-  { id: 'works', value: '작업물' },
+  { id: 'summary', value: '장점' },
+  { id: 'works', value: '프로젝트' },
 ];
 
 export default function ResumeScrollIndicator(): JSX.Element {
