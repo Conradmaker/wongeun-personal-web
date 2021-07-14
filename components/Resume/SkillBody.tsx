@@ -146,7 +146,7 @@ export default function SkillBody(): JSX.Element {
             </ul>
           </article>
           <article>
-            <h3>Dev-Ops</h3>
+            <h3>Dev-Ops / ETC</h3>
             <ul className="summary__container">
               <li>
                 <b>AWS, Azure</b>등의 클라우드 서비스를 이용한 서버구축 및 배포경험이
@@ -159,7 +159,7 @@ export default function SkillBody(): JSX.Element {
                 <b>AZ-900</b> Microsoft Azure Fundamentals 자격증이 있습니다.
               </li>
               <li>
-                <b>NGINX</b>상에서 https 보안인증서를 발급받아 배포한 경험이 있습니다.
+                <b>Git</b>을 이용한 형상관리 및 <b>flow</b>에 대한 이해가 있습니다.
               </li>
             </ul>
           </article>

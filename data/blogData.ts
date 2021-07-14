@@ -13,6 +13,7 @@ export const tagList = [
   { id: 11, name: '생각' },
   { id: 12, name: 'DataBase' },
   { id: 13, name: 'HTML / CSS' },
+  { id: 14, name: 'ETC' },
 ];
 
 export type Post = {
@@ -48,7 +49,7 @@ export const blogData = [
   {
     id: 'azure-funda',
     title: 'Azure Fundamental',
-    desc: 'Micro-Soft 트레이닝 데이 기록.',
+    desc: '마이크로소프트 트레이닝 데이 기록.',
     src: 'https://www.craft.do/s/ezvi6ASCCJbnDE',
     thumbnail:
       'https://secure-res.craft.do/v1/c8P7UHbnJjsN8PtxCZGzYKRZNS5oPzStYqNNwSa5BtThJogfdD3j5QNriEFJQfjMfNrvq3zaLC29suXdWoLy2uf7jKYr6hayY67RSWveDFFA5NU1KENGeawg2XCke7GnNspGRzK3RcoyE8NdjkXyBiw6b',
@@ -68,7 +69,7 @@ export const blogData = [
   {
     id: 'ux-research',
     title: 'UX디자인 리서치 & 서비스 기획',
-    desc: '프로젝트의 시작점 사용자 경험성 향상과 서비스 기획이 이루어지는 과정',
+    desc: '프로젝트의 시작부터 사용자 경험성 향상과 서비스 기획이 이루어지는 과정',
     src: 'https://www.craft.do/s/tTwGWl6MgSziOC',
     thumbnail:
       'https://secure-res.craft.do/v1/XpiwA8Kv35DTvgmwUfUTCdxEX1WUMknYTY1c5zwmkrmKTsNdWtW6JkKbNq1g9u22qMu5HqVYm5jFrLAeAPAYxzXTQsM76AABv69j8aP9LXJR33C8bfUnWMknVFXe9we6y4ExUtbQBMk5ecT5u1KY6kuCg',
@@ -78,7 +79,7 @@ export const blogData = [
   {
     id: 'after-2020',
     title: '나의 2020년을 돌아보며',
-    desc: '개발자로의 시작인 의미깊었던 한해를 마무리한 글',
+    desc: '개발자로의 시작인 의미깊었던 한해를 마무리하는 글',
     src: 'https://www.craft.do/s/IxFaZd3x7pDH8k',
     thumbnail:
       'https://media.vlpt.us/images/yhg0337/post/a817cb77-0692-4b0c-ab0e-f7fa9bde1582/2cb045b7ae35039cfeb4ae4137cb09f6.gif',
@@ -173,7 +174,16 @@ export const blogData = [
     tags: [1, 12],
     createdAt: '2020년 08월',
   },
-
+  {
+    id: 'learn-sanity-basic',
+    title: 'Sanity 기본 사용법',
+    desc: '컨텐츠 플랫폼 Sanity를 배워보자',
+    src: 'https://www.craft.do/s/TL7ShsmYzOWFff',
+    thumbnail:
+      'https://secure-res.craft.do/v1/KUyMwUZLTw42zfwRSv2MCt5Gg6xVmN3poFHQTu2GPEHYMzqFHenwhmyUcaGfYAKk9VvZ2REPX6sBP5GJw5QgArmKjbhRDarbbyj3mDajxNVdF5AF4XQyGz6P9dER2ALjCEszCfPwWddWgxFePyB4KYxxF',
+    tags: [14],
+    createdAt: '2021년 06월',
+  },
   {
     id: 'learn-graphQL',
     title: 'GraphQL 간단히 알아보기',
