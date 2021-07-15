@@ -598,6 +598,8 @@ export const ResumeWorksItemBox = styled.div`
         flex-direction: column;
         color: #4c80f1;
         transition: all 0.3s;
+        position: relative;
+
         svg {
           font-size: 18px;
         }

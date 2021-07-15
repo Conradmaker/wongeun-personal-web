@@ -156,7 +156,7 @@ export default function SkillBody(): JSX.Element {
                 <b>S3, Lambda, Route53, RDS, EC2</b>등의 AWS 리소스를 이용할 수 있습니다.
               </li>
               <li>
-                <b>AZ-900</b> Microsoft Azure Fundamentals 자격증이 있습니다.
+                <b>Microsoft Azure</b> Fundamental Traning Day를 수료하였습니다.
               </li>
               <li>
                 <b>Git</b>을 이용한 형상관리 및 <b>flow</b>에 대한 이해가 있습니다.
